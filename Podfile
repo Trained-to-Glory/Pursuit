@@ -9,5 +9,6 @@ target 'pursue' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
+  pod "PinterestSDK", :git => "https://github.com/pinterest/ios-pdk.git"
 
 end
