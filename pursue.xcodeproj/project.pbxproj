@@ -16,8 +16,6 @@
 		E61736E21F7ACDD700F34755 /* HomeSecondaryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61736E11F7ACDD700F34755 /* HomeSecondaryRow.swift */; };
 		E61736E41F7AD2A800F34755 /* RatingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61736E31F7AD2A800F34755 /* RatingsCell.swift */; };
 		E61736E81F7B139800F34755 /* HomeCustomRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61736E71F7B139800F34755 /* HomeCustomRow.swift */; };
-		E61736EA1F7B1A4A00F34755 /* HomeTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61736E91F7B1A4A00F34755 /* HomeTopCell.swift */; };
-		E61736EC1F7B1A5300F34755 /* HomeBottomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61736EB1F7B1A5300F34755 /* HomeBottomCell.swift */; };
 		E61758CD1F79DBA90038FAAB /* PursuitTodaySecondaryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61758CC1F79DBA90038FAAB /* PursuitTodaySecondaryCard.swift */; };
 		E61758CF1F7A052C0038FAAB /* PursuitTommorrowPrimaryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61758CE1F7A052C0038FAAB /* PursuitTommorrowPrimaryCard.swift */; };
 		E6253F3E1F75444100F6CFE7 /* ExploreHeaderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6253F3D1F75444100F6CFE7 /* ExploreHeaderRow.swift */; };
@@ -87,8 +85,6 @@
 		E61736E11F7ACDD700F34755 /* HomeSecondaryRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeSecondaryRow.swift; sourceTree = "<group>"; };
 		E61736E31F7AD2A800F34755 /* RatingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingsCell.swift; sourceTree = "<group>"; };
 		E61736E71F7B139800F34755 /* HomeCustomRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCustomRow.swift; sourceTree = "<group>"; };
-		E61736E91F7B1A4A00F34755 /* HomeTopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTopCell.swift; sourceTree = "<group>"; };
-		E61736EB1F7B1A5300F34755 /* HomeBottomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeBottomCell.swift; sourceTree = "<group>"; };
 		E61758CC1F79DBA90038FAAB /* PursuitTodaySecondaryCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PursuitTodaySecondaryCard.swift; sourceTree = "<group>"; };
 		E61758CE1F7A052C0038FAAB /* PursuitTommorrowPrimaryCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PursuitTommorrowPrimaryCard.swift; sourceTree = "<group>"; };
 		E6253F3D1F75444100F6CFE7 /* ExploreHeaderRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreHeaderRow.swift; sourceTree = "<group>"; };
@@ -307,8 +303,6 @@
 				E61736E11F7ACDD700F34755 /* HomeSecondaryRow.swift */,
 				E61736E31F7AD2A800F34755 /* RatingsCell.swift */,
 				E61736E71F7B139800F34755 /* HomeCustomRow.swift */,
-				E61736E91F7B1A4A00F34755 /* HomeTopCell.swift */,
-				E61736EB1F7B1A5300F34755 /* HomeBottomCell.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -517,7 +511,6 @@
 				E6CE22771F671D10006C5755 /* SignupController.swift in Sources */,
 				E61736E21F7ACDD700F34755 /* HomeSecondaryRow.swift in Sources */,
 				E64324A81F7955AF0090075F /* PursuitsController.swift in Sources */,
-				E61736EA1F7B1A4A00F34755 /* HomeTopCell.swift in Sources */,
 				E6253F401F754CB000F6CFE7 /* ExploreImageRow.swift in Sources */,
 				E6AB64D71F6F687D00033C09 /* MessagesController.swift in Sources */,
 				E6AB64DD1F7187A500033C09 /* CustomAnimationDismiss.swift in Sources */,
@@ -552,7 +545,6 @@
 				E6253F531F758F7700F6CFE7 /* ToolsList.swift in Sources */,
 				E6AB64D31F6F5B6000033C09 /* ChatInputContainerView.swift in Sources */,
 				E6CE22881F671E3D006C5755 /* Extensions.swift in Sources */,
-				E61736EC1F7B1A5300F34755 /* HomeBottomCell.swift in Sources */,
 				E6253F571F759ADB00F6CFE7 /* LeaderRow.swift in Sources */,
 				E6CE22751F671D10006C5755 /* AppDelegate.swift in Sources */,
 				E61736E01F7AB76000F34755 /* PursuitLater.swift in Sources */,

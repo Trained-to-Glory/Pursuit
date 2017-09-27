@@ -17,6 +17,8 @@ class PursuitTodaySecondaryCard: PursuitTodayPrimaryCard {
         catchUpLabel.isHidden = true
         profilePicture.isHidden = true
         toolCollectionView.isHidden = true
+        execeriseLabel.text = "Use Photoshop"
+        execeriseLabel.font = UIFont.systemFont(ofSize: 24, weight: 25)
         
         cardImage.image = UIImage(named: "tumblr_nbicgmPoWW1r46py4o1_1280")
         

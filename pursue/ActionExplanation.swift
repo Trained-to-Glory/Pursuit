@@ -36,23 +36,27 @@ class ActionExplanation: UICollectionViewCell, UICollectionViewDelegateFlowLayou
     let actionImage : UIImageView = {
        let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
-        iv.clipsToBounds = true
-        iv.layer.cornerRadius = 25
+        iv.layer.masksToBounds = true
+        iv.layer.cornerRadius = 8
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.image = #imageLiteral(resourceName: "tumblr_nbicgmPoWW1r46py4o1_1280")
         return iv
     }()
     
-    
+    let cardView : SmallerCardView = {
+       let card = SmallerCardView()
+        return card
+    }()
     fileprivate func setupView(){
         addSubview(actionView)
-        actionView.addSubview(actionImage)
+        addSubview(cardView)
+        cardView.addSubview(actionImage)
         actionView.addSubview(actionLabel)
         actionView.addSubview(actionDetailLabel)
         
-        
-        actionView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
-        actionImage.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 25, paddingLeft: 32, paddingBottom: 0, paddingRight: 0, width: 50, height:50)
+        cardView.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 25, paddingLeft: 32, paddingBottom: 0, paddingRight: 0, width: 50, height:50)
+        actionView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 32, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        actionImage.anchor(top: cardView.topAnchor, left: cardView.leftAnchor, bottom: cardView.bottomAnchor, right: cardView.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height:0)
         actionLabel.anchor(top: topAnchor, left: actionImage.rightAnchor, bottom: nil, right: actionView.rightAnchor, paddingTop: 15, paddingLeft: 14, paddingBottom: 0, paddingRight: 16, width: 0, height: 20)
         actionDetailLabel.anchor(top: actionLabel.bottomAnchor, left: actionLabel.leftAnchor, bottom: nil, right: actionLabel.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 50)
     }

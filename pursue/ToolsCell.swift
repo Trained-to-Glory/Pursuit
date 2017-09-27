@@ -12,14 +12,17 @@ class ToolsCell: UICollectionViewCell {
     
     let toolsButton : UIButton = {
         let button = UIButton()
-        button.setTitle("Tool Name", for: .normal)
+        button.setTitle("Adobe", for: .normal)
         button.setTitleColor(.black, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: 25)
         button.backgroundColor = UIColor.init(white: 0.4, alpha: 0.05)
         button.layer.cornerRadius = 8
         button.contentHorizontalAlignment = .left
         button.titleEdgeInsets = UIEdgeInsetsMake(0, 12, 0, 0)
         return button
     }()
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .clear

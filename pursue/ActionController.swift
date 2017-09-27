@@ -58,12 +58,6 @@ class ActionController: UICollectionViewController, UICollectionViewDelegateFlow
     }
     
     
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsetsMake(24, 0, 0, 0)
-    }
-    
-    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: actionExplanationId, for: indexPath) as! ActionExplanation
         return cell

@@ -15,8 +15,15 @@ class SkillsRow: UICollectionViewCell {
         iv.backgroundColor = .red
         iv.image = #imageLiteral(resourceName: "trucks")
         iv.contentMode = .scaleAspectFill
-        iv.clipsToBounds = true
+        iv.layer.masksToBounds = true
+        iv.layer.cornerRadius = 8
         return iv
+    }()
+    
+    let cardView : SmallerCardView = {
+        let card = SmallerCardView()
+        card.backgroundColor = .clear
+        return card
     }()
     
     let skillCreatedLabel : UILabel = {
@@ -50,22 +57,17 @@ class SkillsRow: UICollectionViewCell {
         return label
     }()
     
-    let skillsImageRow : UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .clear
-        return collectionView
-    }()
-    
+
     func setupView(){
-        addSubview(skillPicture)
+        addSubview(cardView)
+        cardView.addSubview(skillPicture)
         
         addSubview(skillCreatedLabel)
         addSubview(titleForSkill)
         addSubview(skillCreator)
         
-        skillPicture.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 90, height: 100)
+        cardView.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 10, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 90, height: 100)
+        skillPicture.anchor(top: cardView.topAnchor, left: cardView.leftAnchor, bottom: cardView.bottomAnchor, right: cardView.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         skillCreatedLabel.anchor(top: skillPicture.topAnchor, left: skillPicture.rightAnchor, bottom: nil, right: rightAnchor, paddingTop: 4, paddingLeft: 14, paddingBottom: 0, paddingRight: 0, width: 0, height: 10)
         titleForSkill.anchor(top: skillCreatedLabel.bottomAnchor, left: skillCreatedLabel.leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 8, width: 0, height: 50)

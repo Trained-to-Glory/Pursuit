@@ -31,7 +31,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     // MARK: - Setup View
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -62,7 +62,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: customRowId, for: indexPath) as! HomeCustomRow
             return cell
         default:
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: secondaryId, for: indexPath) as! HomeSecondaryRow
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! HomeRow
             return cell
         }
     }

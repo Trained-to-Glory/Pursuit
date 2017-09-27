@@ -16,6 +16,8 @@ class PursuitTommorrowPrimaryCard: PursuitTodayPrimaryCard {
         titleDetailLabel.text = "Tuesday, October 3"
         profilePicture.isHidden = true
         catchUpLabel.isHidden = true
+        execeriseLabel.text = "Show Work Off"
+        execeriseLabel.font = UIFont.systemFont(ofSize: 24, weight: 25)
         
         cardImage.image = UIImage(named: "clean-8")
         addSubview(titleLabel)

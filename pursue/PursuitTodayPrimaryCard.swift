@@ -51,9 +51,9 @@ class PursuitTodayPrimaryCard: UICollectionViewCell, UICollectionViewDelegateFlo
     
     let execeriseLabel : UILabel = {
         let label = UILabel()
-        label.text = "Exercise Name"
+        label.text = "Draw"
         label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 24)
+        label.font = UIFont.systemFont(ofSize: 24, weight: 25)
         return label
     }()
     
