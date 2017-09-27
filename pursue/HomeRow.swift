@@ -8,58 +8,42 @@
 
 import UIKit
 
-class HomeRow: UICollectionViewCell, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
-    let cellId = "cellId"
+class HomeRow: PursuitTodayPrimaryCard {
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        contentRow.delegate = self
-        contentRow.dataSource = self
-        
-        contentRow.register(HomeRowCells.self, forCellWithReuseIdentifier: cellId)
-        
-        addSubview(rowTitle)
-        addSubview(contentRow)
-        
-        rowTitle.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 15, paddingLeft: 14, paddingBottom: 0, paddingRight: 0, width: 0, height: 20)
-        contentRow.anchor(top: rowTitle.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 15, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
-    }
-    
-    let contentRow : UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .clear
-        return collectionView
-    }()
-    
-    let rowTitle : UILabel = {
-        let label = UILabel()
-        label.text = "Design"
-        label.font = UIFont.systemFont(ofSize: 16)
+    let cardInfoLabel : UILabel = {
+       let label = UILabel()
+        label.text = "Return To IMAX Screens"
+        label.textColor = .white
+        label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
-    // MARK: - Setup Views
-    
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsetsMake(0, 14, 0, 14)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = contentRow.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! HomeRowCells
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100, height: frame.height - 32)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        titleLabel.isHidden = true
+        titleDetailLabel.isHidden = true
+        catchUpLabel.isHidden = true
+        profilePicture.isHidden = true
+        toolCollectionView.isHidden = true
+        
+        execeriseLabel.text = "Wonder Woman"
+        execeriseLabel.font = UIFont.systemFont(ofSize: 24, weight: 25)
+        execeriseLabel.numberOfLines = 0
+        
+        cardImage.image = #imageLiteral(resourceName: "wonder-woman")
+        cardImage.layer.cornerRadius = 4
+        
+        addSubview(exerciseCard)
+        addSubview(cardInfoLabel)
+        addSubview(execeriseLabel)
+        addSubview(execeriseCompletedLabel)
+        addSubview(execeriseTimeLabel)
+        
+        cardInfoLabel.anchor(top: cardImage.topAnchor, left: cardImage.leftAnchor, bottom: nil, right: cardImage.rightAnchor, paddingTop: 8, paddingLeft: 16, paddingBottom: 0, paddingRight: 0, width: 0, height: 20)
+        execeriseLabel.anchor(top: cardInfoLabel.bottomAnchor, left: cardInfoLabel.leftAnchor, bottom: nil, right: nil, paddingTop: 4, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 200, height: 80)
+        exerciseCard.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 4, paddingLeft: 32, paddingBottom: 20, paddingRight: 32, width: 0, height: 0)
+        execeriseCompletedLabel.anchor(top: nil, left: execeriseLabel.leftAnchor, bottom: exerciseCard.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 14, paddingRight: 0, width: 140, height: 20)
+        execeriseTimeLabel.anchor(top: execeriseCompletedLabel.topAnchor, left: nil, bottom: nil, right: exerciseCard.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 8, width: 80, height: 20)
     }
     
     

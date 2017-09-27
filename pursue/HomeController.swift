@@ -8,20 +8,25 @@
 
 import UIKit
 
-class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout, HomeHeaderDelegate {
     
     let cellId = "cellId"
+    let secondaryId = "secondaryId"
+    let customRowId = "customRowId"
     let headerId = "headerId"
+    var delegate : HomeHeaderDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        delegate = self
         collectionView?.backgroundColor = .white
         collectionView?.register(HomeRow.self, forCellWithReuseIdentifier: cellId)
+        collectionView?.register(HomeSecondaryRow.self, forCellWithReuseIdentifier: secondaryId)
+        collectionView?.register(HomeCustomRow.self, forCellWithReuseIdentifier: customRowId)
         collectionView?.register(HomeHeader.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerId)
-        setupNavigationItems()
-    
+        self.navigationController?.isNavigationBarHidden = true
     }
+    
     
     // MARK: - Setup View
     
@@ -30,16 +35,40 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 150)
+        
+        switch indexPath.item {
+        case 0:
+            return CGSize(width: view.frame.width, height: 240)
+        case 1:
+            return CGSize(width: view.frame.width, height: 350)
+        case 2:
+            return CGSize(width: view.frame.width, height: 350)
+        default:
+            return CGSize(width: view.frame.width, height: 240)
+        }
+        
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! HomeRow
-        return cell
+        let cell : UICollectionViewCell
+        switch indexPath.item {
+        case 0:
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! HomeRow
+            return cell
+        case 1:
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: secondaryId, for: indexPath) as! HomeSecondaryRow
+            return cell
+        case 2:
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: customRowId, for: indexPath) as! HomeCustomRow
+            return cell
+        default:
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: secondaryId, for: indexPath) as! HomeSecondaryRow
+            return cell
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.width, height: 275)
+        return CGSize(width: view.frame.width, height: (view.frame.width / 8) + 20)
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -47,21 +76,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         return header
     }
     
-    // MARK: - Navigation Controls
-    
-    func setupNavigationItems() {
-        navigationItem.title = "Home"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "send2").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleMessage))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "camera3").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleCamera))
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
-    // MARK: - Handle Camera
-    
-    func handleCamera() {
+    func handleCamera(for cell: HomeHeader) {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         alertController.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (_) in
@@ -81,11 +96,10 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         present(alertController, animated: true, completion: nil)
     }
     
-    // MARK: - Handle Message
-    
-    func handleMessage(){
+    func handleMessage(for cell: HomeHeader) {
         let messageController = MessagesController()
         let navController = UINavigationController(rootViewController: messageController)
         present(navController, animated: true, completion: nil)
     }
+
 }

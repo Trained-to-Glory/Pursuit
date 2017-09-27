@@ -7,12 +7,64 @@
 //
 
 import UIKit
+import OAuthSwift
 
-class ExploreController: UICollectionViewController {
+
+class ExploreController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+    
+    let headerId = "headerId"
+    let skillsId = "skillsId"
+    let toolsId = "toolsId"
+    let leaderId = "leaderId"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         collectionView?.backgroundColor = .white
-        navigationItem.title = "Explore"
+        collectionView?.register(ExploreHeaderRow.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerId)
+        collectionView?.register(SkillsList.self, forCellWithReuseIdentifier: skillsId)
+        collectionView?.register(ToolsList.self, forCellWithReuseIdentifier: toolsId)
+        collectionView?.register(LeaderList.self, forCellWithReuseIdentifier: leaderId)
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    // MARK: - Setup Views
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: view.frame.width, height: view.frame.width)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as! ExploreHeaderRow
+        return header
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell : SkillsList
+        
+        if indexPath.item == 0 {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: skillsId, for: indexPath) as! SkillsList
+        } else if indexPath.item == 1 {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: toolsId, for: indexPath) as! ToolsList
+        } else {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: leaderId, for: indexPath) as! LeaderList
+            _ = UIEdgeInsetsMake(0, 0, 0, 0)
+        }
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    
+        return  UIEdgeInsetsMake(32, 32, 0, 0)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        return CGSize(width: view.frame.width, height: view.frame.width)
     }
 }

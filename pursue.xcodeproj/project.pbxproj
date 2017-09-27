@@ -11,6 +11,34 @@
 		E616632B1F745F0D00EC254C /* HomeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E616632A1F745F0D00EC254C /* HomeRow.swift */; };
 		E616632D1F74616200EC254C /* HomeRowCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = E616632C1F74616200EC254C /* HomeRowCells.swift */; };
 		E616632F1F7462F700EC254C /* HomeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E616632E1F7462F700EC254C /* HomeHeader.swift */; };
+		E61736DE1F7AB6B200F34755 /* PursuitTommorrowSecondaryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61736DD1F7AB6B200F34755 /* PursuitTommorrowSecondaryCard.swift */; };
+		E61736E01F7AB76000F34755 /* PursuitLater.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61736DF1F7AB76000F34755 /* PursuitLater.swift */; };
+		E61736E21F7ACDD700F34755 /* HomeSecondaryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61736E11F7ACDD700F34755 /* HomeSecondaryRow.swift */; };
+		E61736E41F7AD2A800F34755 /* RatingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61736E31F7AD2A800F34755 /* RatingsCell.swift */; };
+		E61736E81F7B139800F34755 /* HomeCustomRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61736E71F7B139800F34755 /* HomeCustomRow.swift */; };
+		E61736EA1F7B1A4A00F34755 /* HomeTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61736E91F7B1A4A00F34755 /* HomeTopCell.swift */; };
+		E61736EC1F7B1A5300F34755 /* HomeBottomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61736EB1F7B1A5300F34755 /* HomeBottomCell.swift */; };
+		E61758CD1F79DBA90038FAAB /* PursuitTodaySecondaryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61758CC1F79DBA90038FAAB /* PursuitTodaySecondaryCard.swift */; };
+		E61758CF1F7A052C0038FAAB /* PursuitTommorrowPrimaryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61758CE1F7A052C0038FAAB /* PursuitTommorrowPrimaryCard.swift */; };
+		E6253F3E1F75444100F6CFE7 /* ExploreHeaderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6253F3D1F75444100F6CFE7 /* ExploreHeaderRow.swift */; };
+		E6253F401F754CB000F6CFE7 /* ExploreImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6253F3F1F754CB000F6CFE7 /* ExploreImageRow.swift */; };
+		E6253F451F75566B00F6CFE7 /* SkillsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6253F441F75566B00F6CFE7 /* SkillsList.swift */; };
+		E6253F491F755C5A00F6CFE7 /* SkillsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6253F481F755C5A00F6CFE7 /* SkillsRow.swift */; };
+		E6253F4B1F755E9700F6CFE7 /* SkillsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6253F4A1F755E9700F6CFE7 /* SkillsContainer.swift */; };
+		E6253F4F1F75879400F6CFE7 /* ToolsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6253F4E1F75879400F6CFE7 /* ToolsContainer.swift */; };
+		E6253F511F75886E00F6CFE7 /* ToolsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6253F501F75886E00F6CFE7 /* ToolsRow.swift */; };
+		E6253F531F758F7700F6CFE7 /* ToolsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6253F521F758F7700F6CFE7 /* ToolsList.swift */; };
+		E6253F551F759A8700F6CFE7 /* LeaderList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6253F541F759A8700F6CFE7 /* LeaderList.swift */; };
+		E6253F571F759ADB00F6CFE7 /* LeaderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6253F561F759ADB00F6CFE7 /* LeaderRow.swift */; };
+		E6253F591F759B2A00F6CFE7 /* LeaderContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6253F581F759B2A00F6CFE7 /* LeaderContainer.swift */; };
+		E6253F5B1F76EB2400F6CFE7 /* ActionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6253F5A1F76EB2400F6CFE7 /* ActionHeader.swift */; };
+		E6253F5F1F76EE9900F6CFE7 /* ActionExplanation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6253F5E1F76EE9900F6CFE7 /* ActionExplanation.swift */; };
+		E64324A81F7955AF0090075F /* PursuitsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64324A71F7955AF0090075F /* PursuitsController.swift */; };
+		E64324AA1F79564D0090075F /* PursuitTodayPrimaryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64324A91F79564D0090075F /* PursuitTodayPrimaryCard.swift */; };
+		E64324AC1F795C470090075F /* ActionFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64324AB1F795C470090075F /* ActionFooter.swift */; };
+		E64324AE1F7972100090075F /* PursuitHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64324AD1F7972100090075F /* PursuitHeader.swift */; };
+		E64324B51F79A47F0090075F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64324B41F79A47F0090075F /* CardView.swift */; };
+		E64324B71F79AAF40090075F /* ToolsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64324B61F79AAF40090075F /* ToolsCell.swift */; };
 		E6A273F71F6830BD00F5B4C8 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A273F61F6830BD00F5B4C8 /* ProfileHeader.swift */; };
 		E6A273F91F68314F00F5B4C8 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A273F81F68314F00F5B4C8 /* CustomImageView.swift */; };
 		E6A273FB1F6831D700F5B4C8 /* ProfileDetailsCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A273FA1F6831D700F5B4C8 /* ProfileDetailsCells.swift */; };
@@ -54,6 +82,34 @@
 		E616632A1F745F0D00EC254C /* HomeRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRow.swift; sourceTree = "<group>"; };
 		E616632C1F74616200EC254C /* HomeRowCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRowCells.swift; sourceTree = "<group>"; };
 		E616632E1F7462F700EC254C /* HomeHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeHeader.swift; sourceTree = "<group>"; };
+		E61736DD1F7AB6B200F34755 /* PursuitTommorrowSecondaryCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PursuitTommorrowSecondaryCard.swift; sourceTree = "<group>"; };
+		E61736DF1F7AB76000F34755 /* PursuitLater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PursuitLater.swift; sourceTree = "<group>"; };
+		E61736E11F7ACDD700F34755 /* HomeSecondaryRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeSecondaryRow.swift; sourceTree = "<group>"; };
+		E61736E31F7AD2A800F34755 /* RatingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingsCell.swift; sourceTree = "<group>"; };
+		E61736E71F7B139800F34755 /* HomeCustomRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCustomRow.swift; sourceTree = "<group>"; };
+		E61736E91F7B1A4A00F34755 /* HomeTopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTopCell.swift; sourceTree = "<group>"; };
+		E61736EB1F7B1A5300F34755 /* HomeBottomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeBottomCell.swift; sourceTree = "<group>"; };
+		E61758CC1F79DBA90038FAAB /* PursuitTodaySecondaryCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PursuitTodaySecondaryCard.swift; sourceTree = "<group>"; };
+		E61758CE1F7A052C0038FAAB /* PursuitTommorrowPrimaryCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PursuitTommorrowPrimaryCard.swift; sourceTree = "<group>"; };
+		E6253F3D1F75444100F6CFE7 /* ExploreHeaderRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreHeaderRow.swift; sourceTree = "<group>"; };
+		E6253F3F1F754CB000F6CFE7 /* ExploreImageRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreImageRow.swift; sourceTree = "<group>"; };
+		E6253F441F75566B00F6CFE7 /* SkillsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillsList.swift; sourceTree = "<group>"; };
+		E6253F481F755C5A00F6CFE7 /* SkillsRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillsRow.swift; sourceTree = "<group>"; };
+		E6253F4A1F755E9700F6CFE7 /* SkillsContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillsContainer.swift; sourceTree = "<group>"; };
+		E6253F4E1F75879400F6CFE7 /* ToolsContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolsContainer.swift; sourceTree = "<group>"; };
+		E6253F501F75886E00F6CFE7 /* ToolsRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolsRow.swift; sourceTree = "<group>"; };
+		E6253F521F758F7700F6CFE7 /* ToolsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolsList.swift; sourceTree = "<group>"; };
+		E6253F541F759A8700F6CFE7 /* LeaderList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderList.swift; sourceTree = "<group>"; };
+		E6253F561F759ADB00F6CFE7 /* LeaderRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderRow.swift; sourceTree = "<group>"; };
+		E6253F581F759B2A00F6CFE7 /* LeaderContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderContainer.swift; sourceTree = "<group>"; };
+		E6253F5A1F76EB2400F6CFE7 /* ActionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionHeader.swift; sourceTree = "<group>"; };
+		E6253F5E1F76EE9900F6CFE7 /* ActionExplanation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionExplanation.swift; sourceTree = "<group>"; };
+		E64324A71F7955AF0090075F /* PursuitsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PursuitsController.swift; sourceTree = "<group>"; };
+		E64324A91F79564D0090075F /* PursuitTodayPrimaryCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PursuitTodayPrimaryCard.swift; sourceTree = "<group>"; };
+		E64324AB1F795C470090075F /* ActionFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionFooter.swift; sourceTree = "<group>"; };
+		E64324AD1F7972100090075F /* PursuitHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PursuitHeader.swift; sourceTree = "<group>"; };
+		E64324B41F79A47F0090075F /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		E64324B61F79AAF40090075F /* ToolsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolsCell.swift; sourceTree = "<group>"; };
 		E6A273F61F6830BD00F5B4C8 /* ProfileHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		E6A273F81F68314F00F5B4C8 /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		E6A273FA1F6831D700F5B4C8 /* ProfileDetailsCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileDetailsCells.swift; sourceTree = "<group>"; };
@@ -121,6 +177,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E6253F411F75526800F6CFE7 /* Skills */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Skills;
+			sourceTree = "<group>";
+		};
+		E64324A61F79559D0090075F /* Pursuits */ = {
+			isa = PBXGroup;
+			children = (
+				E64324A71F7955AF0090075F /* PursuitsController.swift */,
+				E64324A91F79564D0090075F /* PursuitTodayPrimaryCard.swift */,
+				E64324AD1F7972100090075F /* PursuitHeader.swift */,
+				E64324B61F79AAF40090075F /* ToolsCell.swift */,
+				E61758CC1F79DBA90038FAAB /* PursuitTodaySecondaryCard.swift */,
+				E61758CE1F7A052C0038FAAB /* PursuitTommorrowPrimaryCard.swift */,
+				E61736DD1F7AB6B200F34755 /* PursuitTommorrowSecondaryCard.swift */,
+				E61736DF1F7AB76000F34755 /* PursuitLater.swift */,
+			);
+			name = Pursuits;
+			sourceTree = "<group>";
+		};
 		E6A273FC1F68323F00F5B4C8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,15 +254,17 @@
 		E6CE22731F671D10006C5755 /* pursue */ = {
 			isa = PBXGroup;
 			children = (
-				E6AB64E01F71888C00033C09 /* SelectPhoto */,
-				E6AB64CB1F6F557000033C09 /* Chat */,
 				E6CE22991F675B2A006C5755 /* Action */,
 				E6CE229C1F67615E006C5755 /* Camera */,
+				E6AB64CB1F6F557000033C09 /* Chat */,
 				E6CE22931F6759A8006C5755 /* Explore */,
 				E6CE22901F67594C006C5755 /* Home */,
 				E6CE22891F671EC5006C5755 /* Login */,
 				E6A273FC1F68323F00F5B4C8 /* Models */,
 				E6CE22961F675A35006C5755 /* Profile */,
+				E64324A61F79559D0090075F /* Pursuits */,
+				E6253F411F75526800F6CFE7 /* Skills */,
+				E6AB64E01F71888C00033C09 /* SelectPhoto */,
 				E6CE22861F671E2D006C5755 /* Utils */,
 				E6CE22741F671D10006C5755 /* AppDelegate.swift */,
 				E6CE228E1F675894006C5755 /* MainTabController.swift */,
@@ -203,6 +283,7 @@
 				E6CE22871F671E3D006C5755 /* Extensions.swift */,
 				E6A273F81F68314F00F5B4C8 /* CustomImageView.swift */,
 				E6A274011F68353E00F5B4C8 /* FirebaseUtils.swift */,
+				E64324B41F79A47F0090075F /* CardView.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -223,6 +304,11 @@
 				E616632A1F745F0D00EC254C /* HomeRow.swift */,
 				E616632C1F74616200EC254C /* HomeRowCells.swift */,
 				E616632E1F7462F700EC254C /* HomeHeader.swift */,
+				E61736E11F7ACDD700F34755 /* HomeSecondaryRow.swift */,
+				E61736E31F7AD2A800F34755 /* RatingsCell.swift */,
+				E61736E71F7B139800F34755 /* HomeCustomRow.swift */,
+				E61736E91F7B1A4A00F34755 /* HomeTopCell.swift */,
+				E61736EB1F7B1A5300F34755 /* HomeBottomCell.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -231,6 +317,17 @@
 			isa = PBXGroup;
 			children = (
 				E6CE22941F6759D7006C5755 /* ExploreController.swift */,
+				E6253F3D1F75444100F6CFE7 /* ExploreHeaderRow.swift */,
+				E6253F3F1F754CB000F6CFE7 /* ExploreImageRow.swift */,
+				E6253F441F75566B00F6CFE7 /* SkillsList.swift */,
+				E6253F481F755C5A00F6CFE7 /* SkillsRow.swift */,
+				E6253F4A1F755E9700F6CFE7 /* SkillsContainer.swift */,
+				E6253F4E1F75879400F6CFE7 /* ToolsContainer.swift */,
+				E6253F501F75886E00F6CFE7 /* ToolsRow.swift */,
+				E6253F521F758F7700F6CFE7 /* ToolsList.swift */,
+				E6253F541F759A8700F6CFE7 /* LeaderList.swift */,
+				E6253F561F759ADB00F6CFE7 /* LeaderRow.swift */,
+				E6253F581F759B2A00F6CFE7 /* LeaderContainer.swift */,
 			);
 			name = Explore;
 			sourceTree = "<group>";
@@ -248,6 +345,9 @@
 		E6CE22991F675B2A006C5755 /* Action */ = {
 			isa = PBXGroup;
 			children = (
+				E6253F5A1F76EB2400F6CFE7 /* ActionHeader.swift */,
+				E6253F5E1F76EE9900F6CFE7 /* ActionExplanation.swift */,
+				E64324AB1F795C470090075F /* ActionFooter.swift */,
 				E6CE229A1F675B3D006C5755 /* ActionController.swift */,
 			);
 			name = Action;
@@ -360,8 +460,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-pursue/Pods-pursue-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/OAuthSwift/OAuthSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/PinterestSDK/PinterestSDK.framework",
 				"${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -369,8 +471,10 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OAuthSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PinterestSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SAMKeychain.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -405,19 +509,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6253F591F759B2A00F6CFE7 /* LeaderContainer.swift in Sources */,
 				E6AB64D11F6F58A600033C09 /* ChatLogController.swift in Sources */,
 				E616632D1F74616200EC254C /* HomeRowCells.swift in Sources */,
+				E6253F551F759A8700F6CFE7 /* LeaderList.swift in Sources */,
 				E6A274021F68353E00F5B4C8 /* FirebaseUtils.swift in Sources */,
 				E6CE22771F671D10006C5755 /* SignupController.swift in Sources */,
+				E61736E21F7ACDD700F34755 /* HomeSecondaryRow.swift in Sources */,
+				E64324A81F7955AF0090075F /* PursuitsController.swift in Sources */,
+				E61736EA1F7B1A4A00F34755 /* HomeTopCell.swift in Sources */,
+				E6253F401F754CB000F6CFE7 /* ExploreImageRow.swift in Sources */,
 				E6AB64D71F6F687D00033C09 /* MessagesController.swift in Sources */,
 				E6AB64DD1F7187A500033C09 /* CustomAnimationDismiss.swift in Sources */,
+				E6253F491F755C5A00F6CFE7 /* SkillsRow.swift in Sources */,
+				E6253F451F75566B00F6CFE7 /* SkillsList.swift in Sources */,
 				E6A273F91F68314F00F5B4C8 /* CustomImageView.swift in Sources */,
 				E616632B1F745F0D00EC254C /* HomeRow.swift in Sources */,
 				E6AB64CD1F6F55A300033C09 /* Message.swift in Sources */,
 				E6CE228B1F671ED6006C5755 /* LoginController.swift in Sources */,
 				E6CE22951F6759D8006C5755 /* ExploreController.swift in Sources */,
+				E61736E81F7B139800F34755 /* HomeCustomRow.swift in Sources */,
+				E64324AE1F7972100090075F /* PursuitHeader.swift in Sources */,
 				E6CE229B1F675B3D006C5755 /* ActionController.swift in Sources */,
+				E61736DE1F7AB6B200F34755 /* PursuitTommorrowSecondaryCard.swift in Sources */,
+				E64324AA1F79564D0090075F /* PursuitTodayPrimaryCard.swift in Sources */,
 				E6A273FE1F68325A00F5B4C8 /* Post.swift in Sources */,
+				E6253F4F1F75879400F6CFE7 /* ToolsContainer.swift in Sources */,
+				E61758CF1F7A052C0038FAAB /* PursuitTommorrowPrimaryCard.swift in Sources */,
+				E6253F3E1F75444100F6CFE7 /* ExploreHeaderRow.swift in Sources */,
 				E6AB64D91F6F6B2E00033C09 /* NewMessageController.swift in Sources */,
 				E6AB64E21F7188A300033C09 /* PhotoSelectorController.swift in Sources */,
 				E6CE229E1F67616F006C5755 /* CameraController.swift in Sources */,
@@ -426,17 +545,30 @@
 				E6A274001F68327F00F5B4C8 /* User.swift in Sources */,
 				E6AB64E41F7188B100033C09 /* PhotoSelectorCell.swift in Sources */,
 				E616632F1F7462F700EC254C /* HomeHeader.swift in Sources */,
+				E6253F4B1F755E9700F6CFE7 /* SkillsContainer.swift in Sources */,
+				E6253F5B1F76EB2400F6CFE7 /* ActionHeader.swift in Sources */,
+				E61736E41F7AD2A800F34755 /* RatingsCell.swift in Sources */,
 				E6CE228F1F675894006C5755 /* MainTabController.swift in Sources */,
+				E6253F531F758F7700F6CFE7 /* ToolsList.swift in Sources */,
 				E6AB64D31F6F5B6000033C09 /* ChatInputContainerView.swift in Sources */,
 				E6CE22881F671E3D006C5755 /* Extensions.swift in Sources */,
+				E61736EC1F7B1A5300F34755 /* HomeBottomCell.swift in Sources */,
+				E6253F571F759ADB00F6CFE7 /* LeaderRow.swift in Sources */,
 				E6CE22751F671D10006C5755 /* AppDelegate.swift in Sources */,
+				E61736E01F7AB76000F34755 /* PursuitLater.swift in Sources */,
+				E64324B71F79AAF40090075F /* ToolsCell.swift in Sources */,
 				E6AB64E61F7188C000033C09 /* PhotoSelectorHeader.swift in Sources */,
 				E6CE22981F675A48006C5755 /* ProfileController.swift in Sources */,
 				E6AB64E81F7188CB00033C09 /* SharePhotoController.swift in Sources */,
+				E6253F5F1F76EE9900F6CFE7 /* ActionExplanation.swift in Sources */,
+				E61758CD1F79DBA90038FAAB /* PursuitTodaySecondaryCard.swift in Sources */,
+				E6253F511F75886E00F6CFE7 /* ToolsRow.swift in Sources */,
 				E6AB64CF1F6F566200033C09 /* ChatMessageCell.swift in Sources */,
 				E6AB64DB1F71878A00033C09 /* PreviewPhotoContainerView.swift in Sources */,
 				E6A273F71F6830BD00F5B4C8 /* ProfileHeader.swift in Sources */,
 				E6A273FB1F6831D700F5B4C8 /* ProfileDetailsCells.swift in Sources */,
+				E64324AC1F795C470090075F /* ActionFooter.swift in Sources */,
+				E64324B51F79A47F0090075F /* CardView.swift in Sources */,
 				E6AB64D51F6F611D00033C09 /* UserCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

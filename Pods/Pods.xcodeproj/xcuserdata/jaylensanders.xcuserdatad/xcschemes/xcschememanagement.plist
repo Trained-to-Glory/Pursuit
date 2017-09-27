@@ -9,12 +9,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>GTMSessionFetcher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>GoogleToolboxForMac.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>OAuthSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -47,6 +57,21 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>85C745DF85EB0711CFCC6ACD6069E401</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9F0FA7684BEB2A752D6764B431A262EE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B233A786C105554D2AEA92AE8517CF6C</key>
 		<dict>
 			<key>primary</key>
@@ -68,11 +93,6 @@
 			<true/>
 		</dict>
 		<key>E4DD95323C54A78F879DAB0F1508B8E7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FD216D9FE32ADAABFC5ADAB87E14E71B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

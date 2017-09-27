@@ -45,11 +45,12 @@ class ProfileHeader: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = .clear
         
         addSubview(profileImageView)
         addSubview(usernameLabel)
         addSubview(userBio)
-
+        
         profileImageView.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 36, paddingLeft: 36, paddingBottom: 0, paddingRight: 0, width: 80, height: 80)
         
         usernameLabel.anchor(top: profileImageView.topAnchor, left: profileImageView.rightAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 12, paddingBottom: 0, paddingRight: 12, width: 0, height: 0)
