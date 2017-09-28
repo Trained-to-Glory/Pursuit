@@ -18,6 +18,7 @@
 		E61736E81F7B139800F34755 /* HomeCustomRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61736E71F7B139800F34755 /* HomeCustomRow.swift */; };
 		E61758CD1F79DBA90038FAAB /* PursuitTodaySecondaryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61758CC1F79DBA90038FAAB /* PursuitTodaySecondaryCard.swift */; };
 		E61758CF1F7A052C0038FAAB /* PursuitTommorrowPrimaryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61758CE1F7A052C0038FAAB /* PursuitTommorrowPrimaryCard.swift */; };
+		E61A97BE1F7C3F4C00FB03ED /* ProfilePhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61A97BD1F7C3F4C00FB03ED /* ProfilePhotoCell.swift */; };
 		E6253F3E1F75444100F6CFE7 /* ExploreHeaderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6253F3D1F75444100F6CFE7 /* ExploreHeaderRow.swift */; };
 		E6253F401F754CB000F6CFE7 /* ExploreImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6253F3F1F754CB000F6CFE7 /* ExploreImageRow.swift */; };
 		E6253F451F75566B00F6CFE7 /* SkillsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6253F441F75566B00F6CFE7 /* SkillsList.swift */; };
@@ -87,6 +88,7 @@
 		E61736E71F7B139800F34755 /* HomeCustomRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCustomRow.swift; sourceTree = "<group>"; };
 		E61758CC1F79DBA90038FAAB /* PursuitTodaySecondaryCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PursuitTodaySecondaryCard.swift; sourceTree = "<group>"; };
 		E61758CE1F7A052C0038FAAB /* PursuitTommorrowPrimaryCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PursuitTommorrowPrimaryCard.swift; sourceTree = "<group>"; };
+		E61A97BD1F7C3F4C00FB03ED /* ProfilePhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePhotoCell.swift; sourceTree = "<group>"; };
 		E6253F3D1F75444100F6CFE7 /* ExploreHeaderRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreHeaderRow.swift; sourceTree = "<group>"; };
 		E6253F3F1F754CB000F6CFE7 /* ExploreImageRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreImageRow.swift; sourceTree = "<group>"; };
 		E6253F441F75566B00F6CFE7 /* SkillsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillsList.swift; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 				E6CE22971F675A48006C5755 /* ProfileController.swift */,
 				E6A273F61F6830BD00F5B4C8 /* ProfileHeader.swift */,
 				E6A273FA1F6831D700F5B4C8 /* ProfileDetailsCells.swift */,
+				E61A97BD1F7C3F4C00FB03ED /* ProfilePhotoCell.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 				E64324B71F79AAF40090075F /* ToolsCell.swift in Sources */,
 				E6AB64E61F7188C000033C09 /* PhotoSelectorHeader.swift in Sources */,
 				E6CE22981F675A48006C5755 /* ProfileController.swift in Sources */,
+				E61A97BE1F7C3F4C00FB03ED /* ProfilePhotoCell.swift in Sources */,
 				E6AB64E81F7188CB00033C09 /* SharePhotoController.swift in Sources */,
 				E6253F5F1F76EE9900F6CFE7 /* ActionExplanation.swift in Sources */,
 				E61758CD1F79DBA90038FAAB /* PursuitTodaySecondaryCard.swift in Sources */,

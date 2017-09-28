@@ -8,126 +8,52 @@
 
 import UIKit
 
-class ProfileDetailsCell: UICollectionViewCell {
+class ProfileDetailsCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    // MARK: - Setup User Stacked Options
-    
-    lazy var infoButton : UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Info", for: .normal)
-        button.setTitleColor(.darkGray, for: .normal)
-        button.addTarget(self, action: #selector(handleToggleInfo), for: .touchUpInside)
-        return button
-    }()
-    
-    lazy var photosButton : UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Photos", for: .normal)
-        button.setTitleColor(.darkGray, for: .normal)
-        button.addTarget(self, action: #selector(handleTogglePhotos), for: .touchUpInside)
-        return button
-    }()
-    
-    lazy var skillsButton : UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Skills", for: .normal)
-        button.setTitleColor(.darkGray, for: .normal)
-        button.addTarget(self, action: #selector(handleToggleSkills), for: .touchUpInside)
-        return button
-    }()
-    
-    lazy var settingsButton : UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Settings", for: .normal)
-        button.setTitleColor(.darkGray, for: .normal)
-        button.addTarget(self, action: #selector(handleToggleSettings), for: .touchUpInside)
-        return button
-    }()
-    
-    @objc fileprivate func handleToggleSkills(){
-        skillsButton.backgroundColor = UIColor.init(white: 0.4, alpha: 0.05)
-        settingsButton.backgroundColor = UIColor.init(white: 1, alpha: 0)
-        infoButton.backgroundColor = UIColor.init(white: 1, alpha: 0)
-        photosButton.backgroundColor = UIColor.init(white: 1, alpha: 0)
-        
-        photoImageView.isHidden = true
 
+    let profileImageContainer : UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .clear
+        return collectionView
+    }()
+
+    var postArray = [Post]()
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 9
     }
     
+    let cellId = "cellId"
     
-    @objc fileprivate func handleToggleSettings(){
-        skillsButton.backgroundColor = UIColor.init(white: 1, alpha: 0)
-        settingsButton.backgroundColor = UIColor.init(white: 0.4, alpha: 0.05)
-        infoButton.backgroundColor = UIColor.init(white: 1, alpha: 0)
-        photosButton.backgroundColor = UIColor.init(white: 1, alpha: 0)
-        
-        photoImageView.isHidden = true
-
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ProfilePhotoCell
+        return cell
     }
     
-    @objc fileprivate func handleTogglePhotos(){
-        skillsButton.backgroundColor = UIColor.init(white: 1, alpha: 0)
-        settingsButton.backgroundColor = UIColor.init(white: 1, alpha: 0)
-        infoButton.backgroundColor = UIColor.init(white: 1, alpha: 0)
-        photosButton.backgroundColor = UIColor.init(white: 0.4, alpha: 0.05)
-
-        photoImageView.isHidden = false
-
- 
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = (frame.width - 68) / 3
+        return CGSize(width: width, height: width)
     }
     
-    @objc fileprivate func handleToggleInfo(){
-        skillsButton.backgroundColor = UIColor.init(white: 1, alpha: 0)
-        settingsButton.backgroundColor = UIColor.init(white: 1, alpha: 0)
-        infoButton.backgroundColor = UIColor.init(white: 0.4, alpha: 0.05)
-        photosButton.backgroundColor = UIColor.init(white: 1, alpha: 0)
-        
-        photoImageView.isHidden = true
-    }
-    
-    
-    
-    fileprivate func setupUserProfileOptions(){
-        
-        let stackView = UIStackView(arrangedSubviews: [infoButton, photosButton, skillsButton,settingsButton])
-        stackView.axis = .vertical
-        stackView.distribution = .fillEqually
-        stackView.spacing = 70
 
-        addSubview(stackView)
-        addSubview(photoImageView)
-        photoImageView.addSubview(viewMorePhotos)
-        
-        stackView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: frame.width / 4, height: 0)
-        photoImageView.anchor(top: topAnchor, left: stackView.rightAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
-        viewMorePhotos.anchor(top: nil, left: nil, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 80, height: 75)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
     }
     
-    let photoImageView : CustomImageView = {
-        let iv = CustomImageView()
-        iv.contentMode = .scaleAspectFill
-        iv.clipsToBounds = true
-        iv.image = #imageLiteral(resourceName: "tumblr_nbj794TLRx1r46py4o1_1280")
-        iv.contentMode = .scaleAspectFill
-        return iv
-    }()
-    
-    let viewMorePhotos : UIButton = {
-        let button = UIButton()
-        button.setTitle("10+", for: .normal)
-        button.setTitleColor(.darkGray, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 24)
-        button.backgroundColor = UIColor.lightGray
-        return button
-    }()
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupUserProfileOptions()
         
-        photoImageView.isHidden = true
-        infoButton.backgroundColor = UIColor.init(white: 0.4, alpha: 0.05)
+        profileImageContainer.register(ProfilePhotoCell.self, forCellWithReuseIdentifier: cellId)
+        profileImageContainer.delegate = self
+        profileImageContainer.dataSource = self
+        
+        addSubview(profileImageContainer)
+        profileImageContainer.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 16, paddingLeft: 32, paddingBottom: 0, paddingRight: 32, width: 0, height: 0)
 
     }
     

@@ -8,12 +8,22 @@
 
 import UIKit
 
-class ActionHeader: PursuitHeader {
+class ActionHeader: HomeHeader {
 
+    override func setupViews() {
+        addSubview(chatIcon)
+        addSubview(cameraIcon)
+        
+        chatIcon.anchor(top: pageTitle.topAnchor, left: nil, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 24, width: 0, height: 20)
+        cameraIcon.anchor(top: chatIcon.topAnchor, left: nil, bottom: chatIcon.bottomAnchor, right: chatIcon.leftAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 30, width: 25, height: 0)
+    }
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
-        pageTitle.text = "Pursuits"
+        pageTitle.text = "Pursue"
+        pageTitleDetail.isHidden = true
+        pursuitImageRow.isHidden = true
+
     }
     
     required init?(coder aDecoder: NSCoder) {

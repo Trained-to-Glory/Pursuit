@@ -18,6 +18,14 @@ class PursuitTodayPrimaryCard: UICollectionViewCell, UICollectionViewDelegateFlo
         return label
     }()
     
+    let cardInfoLabel : UILabel = {
+        let label = UILabel()
+        label.text = "Design"
+        label.textColor = .white
+        label.font = UIFont.systemFont(ofSize: 14)
+        return label
+    }()
+    
     let titleDetailLabel : UILabel = {
        let label = UILabel()
         label.text = "Monday, October 2"
@@ -114,10 +122,10 @@ class PursuitTodayPrimaryCard: UICollectionViewCell, UICollectionViewDelegateFlo
         addSubview(exerciseCard)
         
         exerciseCard.addSubview(cardImage)
+        exerciseCard.addSubview(cardInfoLabel)
         exerciseCard.addSubview(execeriseLabel)
         exerciseCard.addSubview(execeriseCompletedLabel)
         exerciseCard.addSubview(execeriseTimeLabel)
-        
         addSubview(profilePicture)
         addSubview(toolCollectionView)
         

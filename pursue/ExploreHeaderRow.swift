@@ -14,7 +14,7 @@ class ExploreHeaderRow: UICollectionViewCell, UICollectionViewDelegateFlowLayout
     
     let pageTitle : UILabel = {
         let label = UILabel()
-        label.text = "Explore the World"
+        label.text = "Explore"
         label.font = UIFont.systemFont(ofSize: 28, weight: 25)
         label.textColor = .black
         return label
@@ -34,6 +34,18 @@ class ExploreHeaderRow: UICollectionViewCell, UICollectionViewDelegateFlowLayout
         return label
     }()
     
+    let exploreChatIcon : UIButton = {
+        let button = UIButton()
+        button.setBackgroundImage(#imageLiteral(resourceName: "send2").withRenderingMode(.alwaysOriginal), for: .normal)
+        return button
+    }()
+    
+    let exploreCameraIcon : UIButton = {
+        let button = UIButton()
+        button.setBackgroundImage(#imageLiteral(resourceName: "camera3").withRenderingMode(.alwaysOriginal), for: .normal)
+        return button
+    }()
+    
     let pursuitImageRow : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -42,12 +54,18 @@ class ExploreHeaderRow: UICollectionViewCell, UICollectionViewDelegateFlowLayout
         collectionView.backgroundColor = .clear
         return collectionView
     }()
-    
+ 
     fileprivate func setupPageTitle(){
         addSubview(pageTitle)
         addSubview(pageTitleDetail)
         pageTitle.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 14, paddingLeft: 32, paddingBottom: 0, paddingRight: 0, width: 0, height: 30)
         pageTitleDetail.anchor(top: pageTitle.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 8, paddingLeft: 32, paddingBottom: 0, paddingRight: 0, width: 0, height: 15)
+        
+        addSubview(exploreChatIcon)
+        addSubview(exploreCameraIcon)
+        
+        exploreChatIcon.anchor(top: pageTitle.topAnchor, left: nil, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 24, width: 0, height: 20)
+        exploreCameraIcon.anchor(top: exploreChatIcon.topAnchor, left: nil, bottom: exploreChatIcon.bottomAnchor, right: exploreChatIcon.leftAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 30, width: 25, height: 0)
     }
     
     
@@ -61,7 +79,7 @@ class ExploreHeaderRow: UICollectionViewCell, UICollectionViewDelegateFlowLayout
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: frame.height - 180, height: frame.height - 115)
+        return CGSize(width: frame.height - 120, height: frame.height - 115)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

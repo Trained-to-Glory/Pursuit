@@ -38,8 +38,7 @@ class HomeHeader: ExploreHeaderRow {
         delegate?.handleMessage(for: self)
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    func setupViews(){
         backgroundColor = .clear
         
         pageTitle.text = "Home"
@@ -48,8 +47,15 @@ class HomeHeader: ExploreHeaderRow {
         
         addSubview(chatIcon)
         addSubview(cameraIcon)
+        addSubview(pageTitle)
+         pageTitle.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 14, paddingLeft: 32, paddingBottom: 0, paddingRight: 0, width: 0, height: 30)
         chatIcon.anchor(top: pageTitle.topAnchor, left: nil, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 24, width: 0, height: 20)
         cameraIcon.anchor(top: chatIcon.topAnchor, left: nil, bottom: chatIcon.bottomAnchor, right: chatIcon.leftAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 30, width: 25, height: 0)
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupViews()
     }
     
     required init?(coder aDecoder: NSCoder) {
