@@ -21,8 +21,6 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         delegate = self
         collectionView?.backgroundColor = .white
         collectionView?.register(HomeRow.self, forCellWithReuseIdentifier: cellId)
-        collectionView?.register(HomeSecondaryRow.self, forCellWithReuseIdentifier: secondaryId)
-        collectionView?.register(HomeCustomRow.self, forCellWithReuseIdentifier: customRowId)
         collectionView?.register(HomeHeader.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerId)
         self.navigationController?.isNavigationBarHidden = true
     }
@@ -31,18 +29,14 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     // MARK: - Setup View
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         switch indexPath.item {
         case 0:
-            return CGSize(width: view.frame.width, height: 240)
-        case 1:
-            return CGSize(width: view.frame.width, height: 350)
-        case 2:
-            return CGSize(width: view.frame.width, height: 350)
+            return CGSize(width: view.frame.width, height: 390)
         default:
             return CGSize(width: view.frame.width, height: 240)
         }
@@ -54,12 +48,6 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         switch indexPath.item {
         case 0:
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! HomeRow
-            return cell
-        case 1:
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: secondaryId, for: indexPath) as! HomeSecondaryRow
-            return cell
-        case 2:
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: customRowId, for: indexPath) as! HomeCustomRow
             return cell
         default:
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! HomeRow

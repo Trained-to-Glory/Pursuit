@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeRow: PursuitTodayPrimaryCard {
+class HomeRow: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     let homeCardInfoLabel : UILabel = {
        let label = UILabel()
@@ -18,32 +18,66 @@ class HomeRow: PursuitTodayPrimaryCard {
         return label
     }()
     
+    let rowLabel : UILabel = {
+        let label = UILabel()
+        label.text = "Today's Picks"
+        label.textColor = .black
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        return label
+    }()
+    
+    let moreLabel : UILabel = {
+        let label = UILabel()
+        label.text = "View More"
+        label.textColor = .gray
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        return label
+    }()
+    
+    let cellId = "cellId"
+    
+    let postCollection : UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .clear
+        return collectionView
+    }()
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 6
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: (frame.width / 2) - 30, height: frame.height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! HomeRowCells
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsetsMake(0, 12, 0, 0)
+    }
+    
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        titleLabel.isHidden = true
-        titleDetailLabel.isHidden = true
-        catchUpLabel.isHidden = true
-        profilePicture.isHidden = true
-        toolCollectionView.isHidden = true
+        backgroundColor = .clear
         
-        execeriseLabel.text = "Wonder Woman"
-        execeriseLabel.font = UIFont.systemFont(ofSize: 24, weight: 25)
-        execeriseLabel.numberOfLines = 0
+        addSubview(postCollection)
+        addSubview(rowLabel)
+        addSubview(moreLabel)
         
-        cardImage.image = #imageLiteral(resourceName: "wonder-woman")
-        cardImage.layer.cornerRadius = 4
-        
-        addSubview(exerciseCard)
-        addSubview(homeCardInfoLabel)
-        addSubview(execeriseLabel)
-        addSubview(execeriseCompletedLabel)
-        addSubview(execeriseTimeLabel)
-        
-        homeCardInfoLabel.anchor(top: cardImage.topAnchor, left: cardImage.leftAnchor, bottom: nil, right: cardImage.rightAnchor, paddingTop: 8, paddingLeft: 16, paddingBottom: 0, paddingRight: 0, width: 0, height: 20)
-        execeriseLabel.anchor(top: homeCardInfoLabel.bottomAnchor, left: homeCardInfoLabel.leftAnchor, bottom: nil, right: nil, paddingTop: 4, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 200, height: 80)
-        exerciseCard.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 4, paddingLeft: 32, paddingBottom: 20, paddingRight: 32, width: 0, height: 0)
-        execeriseCompletedLabel.anchor(top: nil, left: execeriseLabel.leftAnchor, bottom: exerciseCard.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 14, paddingRight: 0, width: 140, height: 20)
-        execeriseTimeLabel.anchor(top: execeriseCompletedLabel.topAnchor, left: nil, bottom: nil, right: exerciseCard.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 8, width: 80, height: 20)
+        rowLabel.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 140, height: 22)
+        moreLabel.anchor(top: topAnchor, left: nil, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 10, width: 90, height: 22)
+        postCollection.anchor(top: rowLabel.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 330)
+        postCollection.register(HomeRowCells.self, forCellWithReuseIdentifier: cellId)
+        postCollection.dataSource = self
+        postCollection.delegate = self
     }
     
     

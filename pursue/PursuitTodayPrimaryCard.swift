@@ -42,6 +42,14 @@ class PursuitTodayPrimaryCard: UICollectionViewCell, UICollectionViewDelegateFlo
         return label
     }()
     
+    let pictureOverlay : UIView = {
+       let view = UIView()
+        view.backgroundColor = UIColor.init(white: 0, alpha: 0.1)
+        view.layer.cornerRadius = 8
+        view.clipsToBounds = true
+        return view
+    }()
+    
     let exerciseCard : CardView = {
        let view = CardView()
         view.backgroundColor = .green
@@ -107,7 +115,7 @@ class PursuitTodayPrimaryCard: UICollectionViewCell, UICollectionViewDelegateFlo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: frame.width / 2, height: 50)
+        return CGSize(width: frame.width / 2, height: 450)
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 2
@@ -122,10 +130,11 @@ class PursuitTodayPrimaryCard: UICollectionViewCell, UICollectionViewDelegateFlo
         addSubview(exerciseCard)
         
         exerciseCard.addSubview(cardImage)
-        exerciseCard.addSubview(cardInfoLabel)
-        exerciseCard.addSubview(execeriseLabel)
-        exerciseCard.addSubview(execeriseCompletedLabel)
-        exerciseCard.addSubview(execeriseTimeLabel)
+        exerciseCard.addSubview(pictureOverlay)
+        pictureOverlay.addSubview(cardInfoLabel)
+        pictureOverlay.addSubview(execeriseLabel)
+        pictureOverlay.addSubview(execeriseCompletedLabel)
+        pictureOverlay.addSubview(execeriseTimeLabel)
         addSubview(profilePicture)
         addSubview(toolCollectionView)
         
@@ -133,13 +142,14 @@ class PursuitTodayPrimaryCard: UICollectionViewCell, UICollectionViewDelegateFlo
         titleDetailLabel.anchor(top: titleLabel.bottomAnchor, left: titleLabel.leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 20)
         catchUpLabel.anchor(top: titleLabel.topAnchor, left: nil, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 32, width: 90, height: 20)
         exerciseCard.anchor(top: titleDetailLabel.bottomAnchor, left: titleDetailLabel.leftAnchor, bottom: nil, right: catchUpLabel.rightAnchor, paddingTop: 12, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 200)
+        pictureOverlay.anchor(top: exerciseCard.topAnchor, left: exerciseCard.leftAnchor, bottom: exerciseCard.bottomAnchor, right: exerciseCard.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         cardImage.anchor(top: exerciseCard.topAnchor, left: exerciseCard.leftAnchor, bottom: exerciseCard.bottomAnchor, right: exerciseCard.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         execeriseLabel.anchor(top: cardImage.topAnchor, left: cardImage.leftAnchor, bottom: nil, right: cardImage.rightAnchor, paddingTop: 14, paddingLeft: 16, paddingBottom: 0, paddingRight: 0, width: 0, height: 30)
         execeriseCompletedLabel.anchor(top: nil, left: execeriseLabel.leftAnchor, bottom: exerciseCard.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 14, paddingRight: 0, width: 140, height: 20)
         execeriseTimeLabel.anchor(top: execeriseCompletedLabel.topAnchor, left: nil, bottom: nil, right: exerciseCard.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 8, width: 80, height: 20)
         
         profilePicture.anchor(top: exerciseCard.bottomAnchor, left: exerciseCard.leftAnchor, bottom: nil, right: nil, paddingTop: 32, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 60, height: 60)
-        toolCollectionView.anchor(top: profilePicture.bottomAnchor, left: profilePicture.leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 12, paddingLeft: 0, paddingBottom: 0, paddingRight: 12, width: 0, height: 60)
+        toolCollectionView.anchor(top: profilePicture.bottomAnchor, left: profilePicture.leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 24, paddingLeft: 0, paddingBottom: 24, paddingRight: 12, width: 0, height: 150)
     }
     
     

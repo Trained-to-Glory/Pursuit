@@ -70,7 +70,7 @@ class PursuitsController: UICollectionViewController, UICollectionViewDelegateFl
         
         switch indexPath.item {
         case 0:
-            return CGSize(width: view.frame.width, height: view.frame.width - 20)
+            return CGSize(width: view.frame.width, height: view.frame.width + 100)
         case 2:
             return CGSize(width: view.frame.width, height: 270)
         default:
