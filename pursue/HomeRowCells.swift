@@ -15,7 +15,6 @@ class HomeRowCells : UICollectionViewCell {
         iv.image = #imageLiteral(resourceName: "tumblr_nbje6dualg1r46py4o1_1280")
         iv.layer.masksToBounds = true
         iv.contentMode = .scaleAspectFill
-        iv.translatesAutoresizingMaskIntoConstraints = false
         iv.layer.cornerRadius = 8
         return iv
     }()
@@ -36,9 +35,10 @@ class HomeRowCells : UICollectionViewCell {
         return label
     }()
     
-    let cardView : CardView = {
-        let card = CardView()
+    let cardView : HomeView = {
+        let card = HomeView()
         card.backgroundColor = .clear
+        card.translatesAutoresizingMaskIntoConstraints = false
         return card
     }()
     
@@ -47,11 +47,13 @@ class HomeRowCells : UICollectionViewCell {
         backgroundColor = .clear
         
         addSubview(homeImage)
+        addSubview(cardView)
         addSubview(homeMainDescription)
         addSubview(homeSubDesctiption)
-
-        homeImage.anchor(top: nil, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 250)
-        homeImage.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        
+        cardView.anchor(top: nil, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 250)
+        cardView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        homeImage.anchor(top: cardView.topAnchor, left: cardView.leftAnchor, bottom: cardView.bottomAnchor, right: cardView.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         homeMainDescription.anchor(top: homeImage.bottomAnchor, left: homeImage.leftAnchor, bottom: nil, right: homeImage.rightAnchor, paddingTop: 16, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 14)
         homeSubDesctiption.anchor(top: homeMainDescription.bottomAnchor, left: homeMainDescription.leftAnchor, bottom: nil, right: homeMainDescription.rightAnchor, paddingTop: 8, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 16)
     }

@@ -26,12 +26,13 @@ class HomeRow: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewD
         return label
     }()
     
-    let moreLabel : UILabel = {
-        let label = UILabel()
-        label.text = "View More"
-        label.textColor = .gray
-        label.font = UIFont.boldSystemFont(ofSize: 16)
-        return label
+    let moreLabel : UIButton = {
+        let button = UIButton()
+        button.setTitle("View More", for: .normal)
+        button.setTitleColor(.gray, for: .normal)
+        button.contentHorizontalAlignment = .right
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        return button
     }()
     
     let cellId = "cellId"
@@ -59,7 +60,7 @@ class HomeRow: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsetsMake(0, 12, 0, 0)
+        return UIEdgeInsetsMake(0, 12, 0, 12)
     }
     
     
