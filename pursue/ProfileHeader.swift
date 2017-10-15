@@ -8,7 +8,14 @@
 
 import UIKit
 
+protocol ProfileHeaderDelegate {
+    func handleCamera(for cell : ProfileHeader)
+    func handleMessage(for cell : ProfileHeader)
+}
+
 class ProfileHeader: HomeHeader {
+    
+    var profileDelegate : ProfileHeaderDelegate?
     
     var user : User? {
         didSet {
@@ -18,6 +25,13 @@ class ProfileHeader: HomeHeader {
         }
     }
     
+    override func handleCamera() {
+        profileDelegate?.handleCamera(for: self)
+    }
+    
+    override func handleMessage() {
+        profileDelegate?.handleMessage(for: self)
+    }
     
     // MARK: - User Profile Picture & Username
     

@@ -15,14 +15,14 @@ class HomeRowCells : UICollectionViewCell {
         iv.image = #imageLiteral(resourceName: "tumblr_nbje6dualg1r46py4o1_1280")
         iv.layer.masksToBounds = true
         iv.contentMode = .scaleAspectFill
-        iv.layer.cornerRadius = 8
         return iv
     }()
     
     let homeMainDescription : UILabel = {
        let label = UILabel()
         label.text = "Wonder Woman"
-        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.font = UIFont.systemFont(ofSize: 20, weight: 25)
+        label.numberOfLines = 0
         label.textColor = .black
         return label
     }()
@@ -31,7 +31,7 @@ class HomeRowCells : UICollectionViewCell {
         let label = UILabel()
         label.text = "Return To IMAX"
         label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 16, weight: UIFontWeightThin)
+        label.font = UIFont.systemFont(ofSize: 14, weight: UIFontWeightThin)
         return label
     }()
     
@@ -42,20 +42,21 @@ class HomeRowCells : UICollectionViewCell {
         return card
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    func setupView() {
         backgroundColor = .clear
         
         addSubview(homeImage)
-        addSubview(cardView)
         addSubview(homeMainDescription)
         addSubview(homeSubDesctiption)
         
-        cardView.anchor(top: nil, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 250)
-        cardView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        homeImage.anchor(top: cardView.topAnchor, left: cardView.leftAnchor, bottom: cardView.bottomAnchor, right: cardView.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
-        homeMainDescription.anchor(top: homeImage.bottomAnchor, left: homeImage.leftAnchor, bottom: nil, right: homeImage.rightAnchor, paddingTop: 16, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 14)
+        homeImage.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 42, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 250)
+        homeMainDescription.anchor(top: homeImage.bottomAnchor, left: homeImage.leftAnchor, bottom: nil, right: homeImage.rightAnchor, paddingTop: 16, paddingLeft: 0, paddingBottom: 0, paddingRight: 8, width: 0, height: 14)
         homeSubDesctiption.anchor(top: homeMainDescription.bottomAnchor, left: homeMainDescription.leftAnchor, bottom: nil, right: homeMainDescription.rightAnchor, paddingTop: 8, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 16)
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ActionController: UICollectionViewController, UICollectionViewDelegateFlowLayout, ActionFooterDelegate {
+class ActionController: UICollectionViewController, UICollectionViewDelegateFlowLayout, ActionFooterDelegate, ActionHeaderDelegate {
     
     let actionHeaderId = "actionHeaderId"
     let actionExplanationId = "actionExplanationId"
@@ -41,6 +41,7 @@ class ActionController: UICollectionViewController, UICollectionViewDelegateFlow
             
         case UICollectionElementKindSectionHeader:
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: actionHeaderId, for: indexPath) as! ActionHeader
+            header.actionDelegate = self
             return header
             
         case UICollectionElementKindSectionFooter:
@@ -69,6 +70,32 @@ class ActionController: UICollectionViewController, UICollectionViewDelegateFlow
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 4
+    }
+    
+    func handleCamera(for cell: ActionHeader) {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        alertController.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (_) in
+            let cameraController = CameraController()
+            self.present(cameraController, animated: true, completion: nil)
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (_) in
+            let layout = UICollectionViewFlowLayout()
+            let photoSelectorController = PhotoSelectorController(collectionViewLayout: layout)
+            let navController = UINavigationController(rootViewController: photoSelectorController)
+            self.present(navController, animated: true, completion: nil)
+            
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func handleMessage(for cell: ActionHeader) {
+        let messageController = MessagesController()
+        let navController = UINavigationController(rootViewController: messageController)
+        present(navController, animated: true, completion: nil)
     }
     
 }

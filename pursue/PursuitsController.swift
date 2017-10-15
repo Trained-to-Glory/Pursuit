@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PursuitsController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class PursuitsController: UICollectionViewController, UICollectionViewDelegateFlowLayout, PursuitHeaderDelegate {
    
     let cellId = "cellId"
     let headerId = "headerId"
@@ -84,9 +84,36 @@ class PursuitsController: UICollectionViewController, UICollectionViewDelegateFl
         return CGSize(width: view.frame.width, height: (view.frame.width / 8) + 30)
     }
     
+    func handleCamera(for cell: PursuitHeader) {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        alertController.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (_) in
+            let cameraController = CameraController()
+            self.present(cameraController, animated: true, completion: nil)
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (_) in
+            let layout = UICollectionViewFlowLayout()
+            let photoSelectorController = PhotoSelectorController(collectionViewLayout: layout)
+            let navController = UINavigationController(rootViewController: photoSelectorController)
+            self.present(navController, animated: true, completion: nil)
+            
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func handleMessage(for cell: PursuitHeader) {
+        let messageController = MessagesController()
+        let navController = UINavigationController(rootViewController: messageController)
+        present(navController, animated: true, completion: nil)
+    }
+    
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as! PursuitHeader
+        header.pursuitDelegate = self
         return header
     }
 }

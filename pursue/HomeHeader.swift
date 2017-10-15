@@ -14,28 +14,28 @@ protocol HomeHeaderDelegate {
 }
 class HomeHeader: ExploreHeaderRow {
     
-    var delegate : HomeHeaderDelegate?
+    var homeDelegate : HomeHeaderDelegate?
     
-    let chatIcon : UIButton = {
+    let homeChatIcon : UIButton = {
        let button = UIButton()
         button.setBackgroundImage(#imageLiteral(resourceName: "send2").withRenderingMode(.alwaysOriginal), for: .normal)
         button.addTarget(self, action: #selector(handleMessage), for: .touchUpInside)
         return button
     }()
     
-    let cameraIcon : UIButton = {
+    let homeCameraIcon : UIButton = {
        let button = UIButton()
         button.setBackgroundImage(#imageLiteral(resourceName: "camera3").withRenderingMode(.alwaysOriginal), for: .normal)
         button.addTarget(self, action: #selector(handleCamera), for: .touchUpInside)
         return button
     }()
     
-    func handleCamera() {
-        delegate?.handleCamera(for: self)
+    override func handleCamera() {
+        homeDelegate?.handleCamera(for: self)
     }
     
-    func handleMessage(){
-        delegate?.handleMessage(for: self)
+    override func handleMessage(){
+        homeDelegate?.handleMessage(for: self)
     }
     
     func setupViews(){
@@ -45,12 +45,8 @@ class HomeHeader: ExploreHeaderRow {
         pageTitleDetail.isHidden = true
         pursuitImageRow.isHidden = true
         
-        addSubview(chatIcon)
-        addSubview(cameraIcon)
         addSubview(pageTitle)
-         pageTitle.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 14, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 0, height: 30)
-        chatIcon.anchor(top: pageTitle.topAnchor, left: nil, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 24, width: 0, height: 20)
-        cameraIcon.anchor(top: chatIcon.topAnchor, left: nil, bottom: chatIcon.bottomAnchor, right: chatIcon.leftAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 30, width: 25, height: 0)
+         pageTitle.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 0, height: 30)
     }
     
     override init(frame: CGRect) {

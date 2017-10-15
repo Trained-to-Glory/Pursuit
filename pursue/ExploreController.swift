@@ -10,7 +10,7 @@ import UIKit
 import OAuthSwift
 
 
-class ExploreController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class ExploreController: UICollectionViewController, UICollectionViewDelegateFlowLayout, ExploreHeaderDelegate {
     
     let headerId = "headerId"
     let skillsId = "skillsId"
@@ -36,6 +36,7 @@ class ExploreController: UICollectionViewController, UICollectionViewDelegateFlo
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as! ExploreHeaderRow
+        header.delegate = self
         return header
     }
     
@@ -66,4 +67,31 @@ class ExploreController: UICollectionViewController, UICollectionViewDelegateFlo
 
         return CGSize(width: view.frame.width, height: view.frame.width)
     }
+    
+    func handleCamera(for cell: ExploreHeaderRow) {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        alertController.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (_) in
+            let cameraController = CameraController()
+            self.present(cameraController, animated: true, completion: nil)
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (_) in
+            let layout = UICollectionViewFlowLayout()
+            let photoSelectorController = PhotoSelectorController(collectionViewLayout: layout)
+            let navController = UINavigationController(rootViewController: photoSelectorController)
+            self.present(navController, animated: true, completion: nil)
+            
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func handleMessage(for cell: ExploreHeaderRow) {
+        let messageController = MessagesController()
+        let navController = UINavigationController(rootViewController: messageController)
+        present(navController, animated: true, completion: nil)
+    }
+
 }

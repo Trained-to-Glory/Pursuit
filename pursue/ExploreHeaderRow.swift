@@ -8,15 +8,46 @@
 
 import UIKit
 
+protocol ExploreHeaderDelegate {
+    
+    func handleCamera(for cell : ExploreHeaderRow)
+    func handleMessage(for cell : ExploreHeaderRow)
+}
+
 class ExploreHeaderRow: UICollectionViewCell, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    var delegate : ExploreHeaderDelegate?
+    
+    let chatIcon : UIButton = {
+        let button = UIButton()
+        button.setBackgroundImage(#imageLiteral(resourceName: "send2").withRenderingMode(.alwaysOriginal), for: .normal)
+        button.addTarget(self, action: #selector(handleMessage), for: .touchUpInside)
+        return button
+    }()
+    
+    let cameraIcon : UIButton = {
+        let button = UIButton()
+        button.setBackgroundImage(#imageLiteral(resourceName: "camera3").withRenderingMode(.alwaysOriginal), for: .normal)
+        button.addTarget(self, action: #selector(handleCamera), for: .touchUpInside)
+        return button
+    }()
+    
+    func handleCamera() {
+        delegate?.handleCamera(for: self)
+    }
+    
+    func handleMessage(){
+        delegate?.handleMessage(for: self)
+    }
     
     let cellId = "cellId"
     
     let pageTitle : UILabel = {
         let label = UILabel()
         label.text = "Explore"
-        label.font = UIFont.systemFont(ofSize: 28, weight: 25)
+        label.font = UIFont.boldSystemFont(ofSize: 28)
         label.textColor = .black
+        label.backgroundColor = .clear
         return label
     }()
     
@@ -58,13 +89,13 @@ class ExploreHeaderRow: UICollectionViewCell, UICollectionViewDelegateFlowLayout
     fileprivate func setupPageTitle(){
         addSubview(pageTitle)
         addSubview(pageTitleDetail)
-        pageTitle.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 14, paddingLeft: 32, paddingBottom: 0, paddingRight: 0, width: 0, height: 30)
+        pageTitle.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 14, paddingLeft: 32, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         pageTitleDetail.anchor(top: pageTitle.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 8, paddingLeft: 32, paddingBottom: 0, paddingRight: 0, width: 0, height: 15)
         
         addSubview(exploreChatIcon)
         addSubview(exploreCameraIcon)
         
-        exploreChatIcon.anchor(top: pageTitle.topAnchor, left: nil, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 24, width: 0, height: 20)
+        exploreChatIcon.anchor(top: pageTitle.topAnchor, left: nil, bottom: nil, right: rightAnchor, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 24, width: 0, height: 20)
         exploreCameraIcon.anchor(top: exploreChatIcon.topAnchor, left: nil, bottom: exploreChatIcon.bottomAnchor, right: exploreChatIcon.leftAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 30, width: 25, height: 0)
     }
     
