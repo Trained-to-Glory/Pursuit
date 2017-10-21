@@ -21,7 +21,7 @@ class HomeRowCells : UICollectionViewCell {
     let homeMainDescription : UILabel = {
        let label = UILabel()
         label.text = "Wonder Woman"
-        label.font = UIFont.systemFont(ofSize: 20, weight: 25)
+        label.font = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight(rawValue: 25))
         label.numberOfLines = 0
         label.textColor = .black
         return label
@@ -31,7 +31,7 @@ class HomeRowCells : UICollectionViewCell {
         let label = UILabel()
         label.text = "Return To IMAX"
         label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 14, weight: UIFontWeightThin)
+        label.font = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.thin)
         return label
     }()
     

@@ -22,7 +22,7 @@ class HomeSecondaryRow: UICollectionViewCell, UICollectionViewDelegateFlowLayout
     
     let cardLabel : UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 24, weight: 25)
+        label.font = UIFont.systemFont(ofSize: 24, weight: UIFont.Weight(rawValue: 25))
         label.numberOfLines = 0
         label.text = "Game of Thrones Season 7"
         label.textColor = .white

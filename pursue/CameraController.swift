@@ -46,7 +46,7 @@ class CameraController: UIViewController, AVCapturePhotoCaptureDelegate, UIViewC
         return customAnimationDismiss
     }
     
-    func handleDismiss() {
+    @objc func handleDismiss() {
         dismiss(animated: true, completion: nil)
     }
     
@@ -65,7 +65,7 @@ class CameraController: UIViewController, AVCapturePhotoCaptureDelegate, UIViewC
         
     }
     
-    func handleCapturePhoto(){
+    @objc func handleCapturePhoto(){
         let settings = AVCapturePhotoSettings()
         guard let previewFormatType = settings.availablePreviewPhotoPixelFormatTypes.first else { return }
         settings.previewPhotoFormat = [kCVPixelBufferPixelFormatTypeKey as String : previewFormatType]
@@ -73,8 +73,7 @@ class CameraController: UIViewController, AVCapturePhotoCaptureDelegate, UIViewC
         output.capturePhoto(with: settings, delegate: self)
     }
     
-    func capture(_ captureOutput: AVCapturePhotoOutput, didFinishProcessingPhotoSampleBuffer photoSampleBuffer: CMSampleBuffer?, previewPhotoSampleBuffer: CMSampleBuffer?, resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Error?) {
-        
+    func photoOutput(_ captureOutput: AVCapturePhotoOutput, didFinishProcessingPhoto photoSampleBuffer: CMSampleBuffer?, previewPhoto previewPhotoSampleBuffer: CMSampleBuffer?, resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Error?) {
         let imageData = AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: photoSampleBuffer!, previewPhotoSampleBuffer: previewPhotoSampleBuffer)
         let previewImage = UIImage(data: imageData!)
         
@@ -91,8 +90,7 @@ class CameraController: UIViewController, AVCapturePhotoCaptureDelegate, UIViewC
         
         let captureSession = AVCaptureSession()
         
-        let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
-        
+        guard let captureDevice = AVCaptureDevice.default(for: AVMediaType.video) else { return }
         // Setup Inputs
         
         do {
@@ -111,7 +109,7 @@ class CameraController: UIViewController, AVCapturePhotoCaptureDelegate, UIViewC
             captureSession.addOutput(output)
         }
         
-        guard let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession) else { return }
+       let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         previewLayer.frame = view.frame
         view.layer.addSublayer(previewLayer)
         captureSession.startRunning()

@@ -45,7 +45,7 @@ class ProfileHeader: HomeHeader {
     
     let usernameLabel : UILabel = {
         let label = UILabel()
-        label.font =  UIFont.systemFont(ofSize: 18, weight: 25)
+        label.font =  UIFont.systemFont(ofSize: 18, weight: UIFont.Weight(rawValue: 25))
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -61,9 +61,9 @@ class ProfileHeader: HomeHeader {
     
     let postsLabel : UILabel = {
         let label = UILabel()
-        let attributedText = NSMutableAttributedString(string: "23\n", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 18, weight: 25)])
+        let attributedText = NSMutableAttributedString(string: "23\n", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 18, weight: UIFont.Weight(rawValue: 25))])
         
-        attributedText.append(NSAttributedString(string: "Posts", attributes: [NSForegroundColorAttributeName: UIColor.black, NSFontAttributeName: UIFont.systemFont(ofSize: 14)]))
+        attributedText.append(NSAttributedString(string: "Posts", attributes: [NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14)]))
         
         label.attributedText = attributedText
         label.numberOfLines = 0
@@ -73,9 +73,9 @@ class ProfileHeader: HomeHeader {
     
     let pursuitsLabel : UILabel = {
         let label = UILabel()
-        let attributedText = NSMutableAttributedString(string: "398\n", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 18, weight: 25)])
+        let attributedText = NSMutableAttributedString(string: "398\n", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 18, weight: UIFont.Weight(rawValue: 25))])
         
-        attributedText.append(NSAttributedString(string: "Pursuits", attributes: [NSForegroundColorAttributeName: UIColor.black, NSFontAttributeName: UIFont.systemFont(ofSize: 14)]))
+        attributedText.append(NSAttributedString(string: "Pursuits", attributes: [NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14)]))
         
         label.attributedText = attributedText
         label.numberOfLines = 0
@@ -85,9 +85,9 @@ class ProfileHeader: HomeHeader {
     
     let interestsLabel : UILabel = {
         let label = UILabel()
-        let attributedText = NSMutableAttributedString(string: "936\n", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 18, weight: 25)])
+        let attributedText = NSMutableAttributedString(string: "936\n", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 18, weight: UIFont.Weight(rawValue: 25))])
         
-        attributedText.append(NSAttributedString(string: "Interests", attributes: [NSForegroundColorAttributeName: UIColor.black, NSFontAttributeName: UIFont.systemFont(ofSize: 14)]))
+        attributedText.append(NSAttributedString(string: "Interests", attributes: [NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14)]))
         
         label.attributedText = attributedText
         label.numberOfLines = 0

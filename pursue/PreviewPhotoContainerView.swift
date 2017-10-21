@@ -30,7 +30,7 @@ class PreviewPhotoContainerView: UIView {
         return button
     }()
     
-    func handleSave(){
+    @objc func handleSave(){
         let library = PHPhotoLibrary.shared()
         guard let previewImage = previewImageView.image else { return }
         
@@ -82,7 +82,7 @@ class PreviewPhotoContainerView: UIView {
         }
     }
     
-    func handleCancel(){
+    @objc func handleCancel(){
         self.removeFromSuperview()
     }
     

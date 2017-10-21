@@ -48,7 +48,7 @@ class MessagesController: UITableViewController {
         fetchUserAndSetupNavBarTitle()
     }
     
-    func handleNewMessage() {
+    @objc func handleNewMessage() {
         let newMessageController = NewMessageController()
         newMessageController.messagesController = self
         let navController = UINavigationController(rootViewController: newMessageController)
@@ -78,7 +78,7 @@ class MessagesController: UITableViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(handleCancel))
     }
     
-    func handleCancel(){
+    @objc func handleCancel(){
         dismiss(animated: true, completion: nil)
     }
     
@@ -248,7 +248,7 @@ class MessagesController: UITableViewController {
     
     var timer: Timer?
     
-    func handleReloadTable() {
+    @objc func handleReloadTable() {
         self.messages = Array(self.messagesDictionary.values)
         self.messages.sort(by: { (message1, message2) -> Bool in
             

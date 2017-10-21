@@ -19,7 +19,7 @@ class ActionExplanation: UICollectionViewCell, UICollectionViewDelegateFlowLayou
     let actionLabel : UILabel = {
         let label = UILabel()
         label.text = "Interest In Action"
-        label.font = UIFont.systemFont(ofSize: 18, weight: 25)
+        label.font = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight(rawValue: 25))
         label.textColor = .black
         return label
     }()

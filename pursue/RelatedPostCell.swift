@@ -21,8 +21,8 @@ class RelatedPostCell : UICollectionViewCell {
     let relatedMainDescription : UILabel = {
         let label = UILabel()
         label.text = "Wonder Woman"
-        label.font = UIFont.systemFont(ofSize: 14, weight: 25)
-        label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight(rawValue: 25))
+        label.numberOfLines = 2
         label.textColor = .black
         return label
     }()
@@ -31,7 +31,7 @@ class RelatedPostCell : UICollectionViewCell {
         let label = UILabel()
         label.text = "Return To IMAX"
         label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightThin)
+        label.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.thin)
         return label
     }()
     

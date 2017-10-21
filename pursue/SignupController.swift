@@ -20,7 +20,7 @@ class SignupController: UIViewController, UIImagePickerControllerDelegate, UINav
         return button
     }()
     
-    func handlePlusPhoto(){
+    @objc func handlePlusPhoto(){
         
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
@@ -108,10 +108,10 @@ class SignupController: UIViewController, UIImagePickerControllerDelegate, UINav
         return button
     }()
     
-    func handleTextInputChange () {
-        let isFormValid = emailTextField.text?.characters.count ?? 0 > 0 &&
-            usernameTextField.text?.characters.count ?? 0 > 0 &&
-            passwordTextField.text?.characters.count ?? 0 > 0
+    @objc func handleTextInputChange () {
+        let isFormValid = emailTextField.text?.count ?? 0 > 0 &&
+            usernameTextField.text?.count ?? 0 > 0 &&
+            passwordTextField.text?.count ?? 0 > 0
         
         if isFormValid {
             signUpButton.isEnabled = true
@@ -124,22 +124,22 @@ class SignupController: UIViewController, UIImagePickerControllerDelegate, UINav
     
     let alreadyHaveAccountButton : UIButton = {
         let button = UIButton(type: .system)
-        let attributedTitle = NSMutableAttributedString(string: "Already have an account?  ", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 14), NSForegroundColorAttributeName: UIColor.lightGray])
-        attributedTitle.append(NSAttributedString(string: "Sign In", attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 14), NSForegroundColorAttributeName: UIColor.rgb(red: 17, green: 154, blue: 237)]))
+        let attributedTitle = NSMutableAttributedString(string: "Already have an account?  ", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14), NSAttributedStringKey.foregroundColor: UIColor.lightGray])
+        attributedTitle.append(NSAttributedString(string: "Sign In", attributes: [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 14), NSAttributedStringKey.foregroundColor: UIColor.rgb(red: 17, green: 154, blue: 237)]))
         button.setAttributedTitle(attributedTitle, for: .normal)
         button.addTarget(self, action: #selector(handleAlreadyHaveAccount), for: .touchUpInside)
         return button
     }()
     
-    func handleAlreadyHaveAccount() {
+    @objc func handleAlreadyHaveAccount() {
         _ = navigationController?.popViewController(animated: true)
     }
     
-    func handleSignup(){
+    @objc func handleSignup(){
         print("Sign up")
-        guard let email = emailTextField.text, email.characters.count > 0 else { return }
-        guard let username = usernameTextField.text, username.characters.count > 0 else { return }
-        guard let password = passwordTextField.text, password.characters.count > 0 else { return }
+        guard let email = emailTextField.text, email.count > 0 else { return }
+        guard let username = usernameTextField.text, username.count > 0 else { return }
+        guard let password = passwordTextField.text, password.count > 0 else { return }
         
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             if let err = error {

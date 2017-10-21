@@ -14,13 +14,13 @@ class HomeCustomRow: UICollectionViewCell, UICollectionViewDelegateFlowLayout {
         let label = UILabel()
         label.text = "Samuel L. Jackson"
         label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 14, weight: 25)
+        label.font = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight(rawValue: 25))
         return label
     }()
     
     let viewsNumber : UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 42, weight: 25)
+        label.font = UIFont.systemFont(ofSize: 42, weight: UIFont.Weight(rawValue: 25))
         label.numberOfLines = 0
         label.text = "36"
         label.textColor = .white
@@ -71,13 +71,13 @@ class HomeCustomRow: UICollectionViewCell, UICollectionViewDelegateFlowLayout {
         let label = UILabel()
         label.text = "Scarlett Johansson"
         label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 12, weight: 25)
+        label.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight(rawValue: 25))
         return label
     }()
     
     let topViewsNumber : UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 42, weight: 25)
+        label.font = UIFont.systemFont(ofSize: 42, weight: UIFont.Weight(rawValue: 25))
         label.numberOfLines = 0
         label.text = "28"
         label.textColor = .blue
@@ -119,13 +119,13 @@ class HomeCustomRow: UICollectionViewCell, UICollectionViewDelegateFlowLayout {
         let label = UILabel()
         label.text = "Tom Hanks"
         label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 12, weight: 25)
+        label.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight(rawValue: 25))
         return label
     }()
     
     let bottomViewsNumber : UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 42, weight: 25)
+        label.font = UIFont.systemFont(ofSize: 42, weight: UIFont.Weight(rawValue: 25))
         label.numberOfLines = 0
         label.text = "56"
         label.textColor = .white

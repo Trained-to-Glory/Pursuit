@@ -27,20 +27,21 @@ class PursuitHeader: HomeHeader {
     }
     
     override func setupViews() {
-        addSubview(homeChatIcon)
-        addSubview(homeCameraIcon)
+        super.setupViews()
         
-        homeChatIcon.anchor(top: pageTitle.topAnchor, left: nil, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 24, width: 0, height: 20)
-        cameraIcon.anchor(top: homeChatIcon.topAnchor, left: nil, bottom: homeChatIcon.bottomAnchor, right: homeChatIcon.leftAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 30, width: 25, height: 0)
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        addSubview(pageTitle)
         pageTitle.text = "Design"
         pageTitleDetail.isHidden = true
         pursuitImageRow.isHidden = true
         backgroundColor = .clear
+        
+        addSubview(pageTitle)
+        pageTitle.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 0, height: 30)
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        setupViews()
 
     }
     

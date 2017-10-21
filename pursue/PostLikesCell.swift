@@ -21,7 +21,7 @@ class PostLikesCell : UICollectionViewCell {
     let fullnameLabel : UILabel = {
         let label = UILabel()
         label.text = "Jaylen Sanders"
-        label.font = UIFont.systemFont(ofSize: 14, weight: UIFontWeightThin)
+        label.font = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.thin)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

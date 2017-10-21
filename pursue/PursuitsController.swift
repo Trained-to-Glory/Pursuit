@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PursuitsController: UICollectionViewController, UICollectionViewDelegateFlowLayout, PursuitHeaderDelegate {
+class PursuitsController: UICollectionViewController, UICollectionViewDelegateFlowLayout, PursuitHeaderDelegate, PursuitDelegate {
    
     let cellId = "cellId"
     let headerId = "headerId"
@@ -43,6 +43,7 @@ class PursuitsController: UICollectionViewController, UICollectionViewDelegateFl
         switch indexPath.item {
         case 0:
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! PursuitTodayPrimaryCard
+            cell.delegate = self
             return cell
             
         case 1:
@@ -70,7 +71,7 @@ class PursuitsController: UICollectionViewController, UICollectionViewDelegateFl
         
         switch indexPath.item {
         case 0:
-            return CGSize(width: view.frame.width, height: view.frame.width + 100)
+            return CGSize(width: view.frame.width, height: view.frame.width + 270)
         case 2:
             return CGSize(width: view.frame.width, height: 270)
         default:
@@ -82,6 +83,11 @@ class PursuitsController: UICollectionViewController, UICollectionViewDelegateFl
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: view.frame.width, height: (view.frame.width / 8) + 30)
+    }
+    
+    func pursuitSelected(for cell : PursuitTodayPrimaryCard){
+        let pursuits = PursuitsDetailController(collectionViewLayout: UICollectionViewFlowLayout())
+        navigationController?.pushViewController(pursuits, animated: true)
     }
     
     func handleCamera(for cell: PursuitHeader) {

@@ -38,21 +38,21 @@ class SkillsRow: UICollectionViewCell {
     let skillCreator : UILabel = {
         let label = UILabel()
         label.text = "Old Truman Brewery"
-        label.font = UIFont.systemFont(ofSize: 12, weight: 25)
+        label.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight(rawValue: 25))
         return label
     }()
     
     let titleForSkill : UILabel = {
        let label = UILabel()
         label.text = "Tokyo Home Show Autumn 2017"
-        label.font = UIFont.systemFont(ofSize: 16, weight: 25)
+        label.font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight(rawValue: 25))
         return label
     }()
     
     let skillsLabel : UILabel = {
        let label = UILabel()
         label.text = "Skills"
-        label.font = UIFont.systemFont(ofSize: 24, weight: 25)
+        label.font = UIFont.systemFont(ofSize: 24, weight: UIFont.Weight(rawValue: 25))
         label.textColor = .black
         return label
     }()

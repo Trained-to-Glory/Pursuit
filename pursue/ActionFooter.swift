@@ -27,7 +27,7 @@ class ActionFooter: UICollectionViewCell {
         return button
     }()
     
-    func handleChangeToPursuit(){
+    @objc func handleChangeToPursuit(){
         delegate?.pressedGetStarted(for: self)
     }
     

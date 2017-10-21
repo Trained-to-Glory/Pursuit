@@ -10,17 +10,4 @@ import UIKit
 
 class PursuitTommorrowPrimaryCard: PursuitTodayPrimaryCard {
     
-    override func setupView() {
-        super.setupView()
-        titleLabel.text = "Tomorrow"
-        titleDetailLabel.text = "Tuesday, October 3"
-        profilePicture.isHidden = true
-        catchUpLabel.isHidden = true
-        execeriseLabel.text = "Show Work Off"
-        execeriseLabel.font = UIFont.systemFont(ofSize: 24, weight: 25)
-        
-        cardImage.image = UIImage(named: "clean-8")
-        addSubview(titleLabel)
-        titleLabel.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 48, paddingLeft: 32, paddingBottom: 0, paddingRight: 0, width: 100, height: 20)
-    }
 }

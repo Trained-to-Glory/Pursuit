@@ -32,11 +32,11 @@ class ExploreHeaderRow: UICollectionViewCell, UICollectionViewDelegateFlowLayout
         return button
     }()
     
-    func handleCamera() {
+    @objc func handleCamera() {
         delegate?.handleCamera(for: self)
     }
     
-    func handleMessage(){
+    @objc func handleMessage(){
         delegate?.handleMessage(for: self)
     }
     

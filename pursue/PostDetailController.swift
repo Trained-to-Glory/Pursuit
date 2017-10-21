@@ -20,11 +20,7 @@ class PostDetailController : UICollectionViewController, UICollectionViewDelegat
     var isRelatedView = false
     var isLikesView = false
     
-    func handleDismiss (){
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    func goBack(for cell: PostDetailHeader) {
+    func goBack() {
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -108,10 +104,6 @@ class PostDetailController : UICollectionViewController, UICollectionViewDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-       navigationController?.navigationBar.isHidden = false
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "white-back-button").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleDismiss))
         
         collectionView?.register(PostView.self, forCellWithReuseIdentifier: postId)
         collectionView?.register(PostLikes.self, forCellWithReuseIdentifier: likeId)

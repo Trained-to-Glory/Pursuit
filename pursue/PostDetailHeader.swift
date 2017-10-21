@@ -9,7 +9,7 @@
 import UIKit
 
 protocol PostDetailHeaderDelegate {
-    func goBack(for cell : PostDetailHeader)
+    func goBack()
     func didChangeToLikesView()
     func didChangeToCommentsView()
     func didChangeToRelatedView()
@@ -50,7 +50,7 @@ class PostDetailHeader : UICollectionViewCell {
     let postLabel : UILabel = {
         let label = UILabel()
         label.text = "Wonder Woman"
-        label.font = UIFont.systemFont(ofSize: 24, weight: 25)
+        label.font = UIFont.systemFont(ofSize: 24, weight: UIFont.Weight(rawValue: 25))
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -109,8 +109,8 @@ class PostDetailHeader : UICollectionViewCell {
     let likesLabelUnderline = UIView()
     let bottomDividerView = UIView()
     
-    func dismissView(){
-        postDetailDelegate?.goBack(for: self)
+    @objc func dismissView(){
+        postDetailDelegate?.goBack()
     }
     
     func setupTopNavBar(){
@@ -129,6 +129,7 @@ class PostDetailHeader : UICollectionViewCell {
         stackView = UIStackView(arrangedSubviews: [aboutButton, likesLabel, commentsLabel, relatedLabel])
         stackView.axis = .horizontal
         stackView.spacing = 30
+        
         
         addSubview(stackView)
         addSubview(bottomDividerView)
@@ -155,7 +156,7 @@ class PostDetailHeader : UICollectionViewCell {
         pageOptions()
     }
     
-    func toggleAboutUnderline(){
+    @objc func toggleAboutUnderline(){
         aboutLabelUnderline.backgroundColor = .black
         
         likesLabel.setTitleColor(.gray, for: .normal)
@@ -181,7 +182,7 @@ class PostDetailHeader : UICollectionViewCell {
 
     }
     
-    func toggleLikesUnderline(){
+    @objc func toggleLikesUnderline(){
         likesLabelUnderline.backgroundColor = .black
         
         likesLabel.setTitleColor(.black, for: .normal)
@@ -204,7 +205,7 @@ class PostDetailHeader : UICollectionViewCell {
         relatedLabelUnderline.isHidden = true
     }
     
-    func toggleCommentsUnderline(){
+    @objc func toggleCommentsUnderline(){
         commentsLabelUnderline.backgroundColor = .black
         
         likesLabel.setTitleColor(.gray, for: .normal)
@@ -227,7 +228,7 @@ class PostDetailHeader : UICollectionViewCell {
         likesLabelUnderline.isHidden = true
     }
     
-    func toggleRelatedUnderline() {
+    @objc func toggleRelatedUnderline() {
         relatedLabelUnderline.backgroundColor = .black
         
         likesLabel.setTitleColor(.gray, for: .normal)
@@ -258,7 +259,5 @@ class PostDetailHeader : UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
     
 }
