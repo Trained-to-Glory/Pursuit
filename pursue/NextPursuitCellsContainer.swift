@@ -23,7 +23,7 @@ class NextPursuitCellsContainer : UICollectionViewCell, UICollectionViewDelegate
     
     func setupView(){
         addSubview(pursuitSteps)
-        pursuitSteps.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 320)
+        pursuitSteps.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -40,7 +40,7 @@ class NextPursuitCellsContainer : UICollectionViewCell, UICollectionViewDelegate
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: ((frame.width - 2) / 3) + 135, height: ((frame.width - 2) / 3) + 50)
+        return CGSize(width: frame.width - 24, height: ((frame.width - 2) / 3) + 90)
     }
     
     override init(frame: CGRect) {

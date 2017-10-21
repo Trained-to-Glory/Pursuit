@@ -57,7 +57,7 @@ class NextPursuitCells : UICollectionViewCell {
     
     let nextImage : UIImageView = {
         let iv = UIImageView()
-        iv.image = #imageLiteral(resourceName: "tumblr_nbje6dualg1r46py4o1_1280")
+        iv.image = #imageLiteral(resourceName: "trees")
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         return iv
