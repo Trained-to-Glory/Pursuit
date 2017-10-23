@@ -212,8 +212,8 @@ class DetailHeaderCells : UICollectionViewCell {
         let margins = layoutMarginsGuide
         let buttonCenter = aboutButton.frame.midX
         if challengeLabelUnderline.isHidden == false {
-            stackView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: buttonCenter + viewCenter - 100).isActive = true
-            stackView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: buttonCenter + viewCenter - 130).isActive = true
+            stackView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: buttonCenter + viewCenter - 90).isActive = true
+            stackView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: buttonCenter + viewCenter - 100).isActive = true
         } else {
             stackView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: buttonCenter + viewCenter - 100).isActive = true
             stackView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: buttonCenter + viewCenter - 130).isActive = true
