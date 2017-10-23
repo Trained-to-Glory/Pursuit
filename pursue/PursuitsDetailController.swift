@@ -33,8 +33,8 @@ class PursuitsDetailController : UICollectionViewController, UICollectionViewDel
         isTeamView = false
         isNextView = false
         isStepsView = false
-        
         collectionView?.reloadData()
+        collectionView?.updateConstraints()
     }
     
     func changeSaved() {
@@ -44,8 +44,8 @@ class PursuitsDetailController : UICollectionViewController, UICollectionViewDel
         isTeamView = false
         isNextView = false
         isStepsView = false
-        
         collectionView?.reloadData()
+        collectionView?.updateConstraints()
     }
     
     func changeTool() {
@@ -55,8 +55,8 @@ class PursuitsDetailController : UICollectionViewController, UICollectionViewDel
         isTeamView = false
         isNextView = false
         isStepsView = false
-        
         collectionView?.reloadData()
+        collectionView?.updateConstraints()
     }
     
     func changeTeam() {
@@ -66,8 +66,8 @@ class PursuitsDetailController : UICollectionViewController, UICollectionViewDel
         isTeamView = true
         isNextView = false
         isStepsView = false
-        
         collectionView?.reloadData()
+        collectionView?.updateConstraints()
     }
     
     func changeNext() {
@@ -77,8 +77,8 @@ class PursuitsDetailController : UICollectionViewController, UICollectionViewDel
         isTeamView = false
         isNextView = true
         isStepsView = false
-        
         collectionView?.reloadData()
+        collectionView?.updateConstraints()
     }
     
     func changeSteps() {
@@ -88,8 +88,8 @@ class PursuitsDetailController : UICollectionViewController, UICollectionViewDel
         isTeamView = false
         isNextView = false
         isStepsView = true
-        
         collectionView?.reloadData()
+        collectionView?.updateConstraints()
     }
     
     let cellId = "cellId"

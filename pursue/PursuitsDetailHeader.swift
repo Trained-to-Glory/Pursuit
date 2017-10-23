@@ -25,6 +25,7 @@ class PursuitsDetailHeader : UICollectionViewCell, UICollectionViewDelegate, UIC
     var isTeamView = false
     var isNextView = false
     var isStepsView = false
+    var isMoved = false
     
     func aboutLabelSelected() {
         changeDelegate?.changeAbout()
@@ -34,6 +35,9 @@ class PursuitsDetailHeader : UICollectionViewCell, UICollectionViewDelegate, UIC
         isTeamView = false
         isNextView = false
         isStepsView = false
+        
+        collectionViewContainer.reloadData()
+        collectionViewContainer.updateConstraints()
     }
     
     func savedLabelSelected() {
@@ -44,7 +48,9 @@ class PursuitsDetailHeader : UICollectionViewCell, UICollectionViewDelegate, UIC
         isTeamView = false
         isNextView = false
         isStepsView = false
-        
+        collectionViewContainer.reloadData()
+        collectionViewContainer.updateConstraints()
+
     }
     
     func toolsLabelSelected() {
@@ -56,6 +62,8 @@ class PursuitsDetailHeader : UICollectionViewCell, UICollectionViewDelegate, UIC
         isNextView = false
         isStepsView = false
         
+        collectionViewContainer.reloadData()
+        collectionViewContainer.updateConstraints()
     }
     
     func teamLabelSelected() {
@@ -66,6 +74,9 @@ class PursuitsDetailHeader : UICollectionViewCell, UICollectionViewDelegate, UIC
         isTeamView = true
         isNextView = false
         isStepsView = false
+        
+        collectionViewContainer.reloadData()
+        collectionViewContainer.updateConstraints()
         
     }
     
@@ -78,10 +89,15 @@ class PursuitsDetailHeader : UICollectionViewCell, UICollectionViewDelegate, UIC
         isNextView = true
         isStepsView = false
         
+        collectionViewContainer.reloadData()
+        collectionViewContainer.updateConstraints()
+        
     }
     
     func stepLabelSelected() {
         changeDelegate?.changeSteps()
+        isMoved = true
+        
         isAboutView = false
         isSavedView = false
         isToolsView = false
@@ -89,6 +105,8 @@ class PursuitsDetailHeader : UICollectionViewCell, UICollectionViewDelegate, UIC
         isNextView = false
         isStepsView = true
         
+        collectionViewContainer.reloadData()
+        collectionViewContainer.updateConstraints()
     }
     
     
@@ -143,6 +161,9 @@ class PursuitsDetailHeader : UICollectionViewCell, UICollectionViewDelegate, UIC
     let headerId = "headerId"
     
     var stackView = UIStackView()
+    var trailing : NSLayoutConstraint?
+    var leading : NSLayoutConstraint?
+    
     let bottomDividerView = UIView()
     
     @objc func dismissView(){
@@ -198,7 +219,6 @@ class PursuitsDetailHeader : UICollectionViewCell, UICollectionViewDelegate, UIC
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: frame.width + 58, height: 50)
     }
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)

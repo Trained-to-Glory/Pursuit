@@ -70,21 +70,41 @@ class DetailHeaderCells : UICollectionViewCell {
         return label
     }()
     
+    let leftWhiteSpace : UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        return view
+    }()
+    
+    let rightWhiteSpace : UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        return view
+    }()
+    
     let teamLabelUnderline = UIView()
     let savedLabelUnderline = UIView()
     let aboutLabelUnderline = UIView()
     let nextLabelUnderline = UIView()
     let toolsLabelUnderline = UIView()
     let stepsLabelUnderline = UIView()
+    let stackBackground = UIView()
     var stackView = UIStackView()
+    var leading : NSLayoutConstraint?
+    var trailing : NSLayoutConstraint?
     
     func setupView(){
         stackView = UIStackView(arrangedSubviews: [aboutButton, stepsLabel, nextLabel, teamLabel, toolsLabel, savedLabel])
         stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
-        
+        stackView.spacing = 30
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+    
         addSubview(stackView)
-        stackView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        
+        stackView.anchor(top: topAnchor, left: nil, bottom: bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+
     }
     
     @objc func toggleAboutUnderline(){
@@ -112,6 +132,21 @@ class DetailHeaderCells : UICollectionViewCell {
         toolsLabelUnderline.isHidden = true
         savedLabelUnderline.isHidden = true
         nextLabelUnderline.isHidden = true
+        
+        let viewCenter = frame.midX / 3
+        let margins = layoutMarginsGuide
+        let buttonCenter = aboutButton.frame.midX
+        
+        if aboutLabelUnderline.isHidden == false {
+            stackView.updateConstraints()
+            stackView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: buttonCenter + viewCenter + 50).isActive = true
+            stackView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: buttonCenter + viewCenter).isActive = true
+        } else {
+            stackView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: buttonCenter + viewCenter + 50).isActive = true
+            stackView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: buttonCenter + viewCenter).isActive = true
+        }
+        
+        stackView.updateConstraints()
         
     }
     
@@ -141,6 +176,21 @@ class DetailHeaderCells : UICollectionViewCell {
         savedLabelUnderline.isHidden = true
         teamLabelUnderline.isHidden = false
         nextLabelUnderline.isHidden = true
+        
+        let viewCenter = frame.midX / 12
+        let margins = layoutMarginsGuide
+        let buttonCenter = aboutButton.frame.midX
+        if teamLabelUnderline.isHidden == false {
+            stackView.updateConstraints()
+            stackView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: buttonCenter + viewCenter - 100).isActive = true
+            stackView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: buttonCenter + viewCenter - 130).isActive = true
+        }
+        else {
+            stackView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: buttonCenter + viewCenter - 100).isActive = true
+            stackView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: buttonCenter + viewCenter - 130).isActive = true
+        }
+        
+        stackView.updateConstraints()
     }
     
     @objc func toggleToolsUnderline(){
@@ -169,6 +219,22 @@ class DetailHeaderCells : UICollectionViewCell {
         savedLabelUnderline.isHidden = true
         toolsLabelUnderline.isHidden = false
         nextLabelUnderline.isHidden = true
+        
+        let viewCenter = frame.midX / 16
+        let margins = layoutMarginsGuide
+        let buttonCenter = aboutButton.frame.midX
+        
+        if toolsLabelUnderline.isHidden == false {
+            stackView.updateConstraints()
+            stackView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: buttonCenter + viewCenter - 155).isActive = true
+            stackView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: buttonCenter + viewCenter - 185).isActive = true
+        }
+        else {
+            stackView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: buttonCenter + viewCenter - 155).isActive = true
+            stackView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: buttonCenter + viewCenter - 185).isActive = true
+        }
+        
+        stackView.updateConstraints()
     }
     
     @objc func toggleStepsUnderline(){
@@ -197,6 +263,22 @@ class DetailHeaderCells : UICollectionViewCell {
         toolsLabelUnderline.isHidden = true
         teamLabelUnderline.isHidden = true
         nextLabelUnderline.isHidden = true
+        
+        let viewCenter = frame.midX / 3
+        let margins = layoutMarginsGuide
+        let buttonCenter = aboutButton.frame.midX
+       
+        if stepsLabelUnderline.isHidden == false {
+            stackView.updateConstraints()
+            stackView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: buttonCenter + viewCenter - 25).isActive = true
+            stackView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: buttonCenter + viewCenter - 55).isActive = true
+        }
+        else {
+            stackView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: buttonCenter + viewCenter - 25).isActive = true
+            stackView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: buttonCenter + viewCenter - 55).isActive = true
+        }
+        
+        stackView.updateConstraints()
     }
     
     @objc func toggleSavedUnderline(){
@@ -224,6 +306,22 @@ class DetailHeaderCells : UICollectionViewCell {
         teamLabelUnderline.isHidden = true
         stepsLabelUnderline.isHidden = true
         nextLabelUnderline.isHidden = true
+
+        let viewCenter = frame.midX / 16
+        let margins = layoutMarginsGuide
+        let buttonCenter = aboutButton.frame.midX
+        
+        if savedLabelUnderline.isHidden == false {
+            stackView.updateConstraints()
+            stackView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: buttonCenter + viewCenter - 230).isActive = true
+            stackView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: buttonCenter + viewCenter - 260).isActive = true
+        }
+        else {
+            stackView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: buttonCenter + viewCenter - 230).isActive = true
+            stackView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: buttonCenter + viewCenter - 260).isActive = true
+        }
+        
+        stackView.updateConstraints()
     }
     
     @objc func toggleNextUnderline() {
@@ -251,6 +349,23 @@ class DetailHeaderCells : UICollectionViewCell {
         toolsLabelUnderline.isHidden = true
         teamLabelUnderline.isHidden = true
         aboutLabelUnderline.isHidden = true
+        
+        let viewCenter = frame.midX / 8
+        let margins = layoutMarginsGuide
+        let buttonCenter = aboutButton.frame.midX
+        
+        if nextLabelUnderline.isHidden == false {
+            stackView.updateConstraints()
+            stackView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: buttonCenter + viewCenter - 50).isActive = true
+            stackView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: buttonCenter + viewCenter - 80).isActive = true
+        }
+        else {
+            stackView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: buttonCenter + viewCenter - 50).isActive = true
+            stackView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: buttonCenter + viewCenter - 80).isActive = true
+        }
+        
+        stackView.updateConstraints()
+        
     }
     
     override init(frame: CGRect) {

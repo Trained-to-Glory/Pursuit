@@ -74,6 +74,7 @@ class PostDetailHeader : UICollectionViewCell {
         let label = UIButton()
         label.setTitle("ABOUT", for: .normal)
         label.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.addTarget(self, action: #selector(toggleAboutUnderline), for: .touchUpInside)
         return label
     }()
