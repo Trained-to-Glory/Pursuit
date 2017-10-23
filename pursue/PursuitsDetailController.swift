@@ -21,6 +21,7 @@ class PursuitsDetailController : UICollectionViewController, UICollectionViewDel
     var isTeamView = false
     var isNextView = false
     var isStepsView = false
+    var isChallengeView = false
     
     func goBack() {
         self.dismiss(animated: true, completion: nil)
@@ -33,6 +34,19 @@ class PursuitsDetailController : UICollectionViewController, UICollectionViewDel
         isTeamView = false
         isNextView = false
         isStepsView = false
+        isChallengeView = false
+        collectionView?.reloadData()
+        collectionView?.updateConstraints()
+    }
+    
+    func changeChallenge() {
+        isAboutView = false
+        isSavedView = false
+        isToolsView = false
+        isTeamView = false
+        isNextView = false
+        isStepsView = false
+        isChallengeView = true
         collectionView?.reloadData()
         collectionView?.updateConstraints()
     }
@@ -44,6 +58,7 @@ class PursuitsDetailController : UICollectionViewController, UICollectionViewDel
         isTeamView = false
         isNextView = false
         isStepsView = false
+        isChallengeView = false
         collectionView?.reloadData()
         collectionView?.updateConstraints()
     }
@@ -55,6 +70,7 @@ class PursuitsDetailController : UICollectionViewController, UICollectionViewDel
         isTeamView = false
         isNextView = false
         isStepsView = false
+        isChallengeView = false
         collectionView?.reloadData()
         collectionView?.updateConstraints()
     }
@@ -66,6 +82,7 @@ class PursuitsDetailController : UICollectionViewController, UICollectionViewDel
         isTeamView = true
         isNextView = false
         isStepsView = false
+        isChallengeView = false
         collectionView?.reloadData()
         collectionView?.updateConstraints()
     }
@@ -77,6 +94,7 @@ class PursuitsDetailController : UICollectionViewController, UICollectionViewDel
         isTeamView = false
         isNextView = true
         isStepsView = false
+        isChallengeView = false
         collectionView?.reloadData()
         collectionView?.updateConstraints()
     }
@@ -88,6 +106,7 @@ class PursuitsDetailController : UICollectionViewController, UICollectionViewDel
         isTeamView = false
         isNextView = false
         isStepsView = true
+        isChallengeView = false
         collectionView?.reloadData()
         collectionView?.updateConstraints()
     }
@@ -96,6 +115,7 @@ class PursuitsDetailController : UICollectionViewController, UICollectionViewDel
     let nextId = "nextId"
     let stepId = "stepId"
     let toolId = "toolId"
+    let challengeId = "challengeId"
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
@@ -120,6 +140,9 @@ class PursuitsDetailController : UICollectionViewController, UICollectionViewDel
             return cell
         case isTeamView:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: likeId, for: indexPath) as! PostLikes
+            return cell
+        case isChallengeView:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: challengeId, for: indexPath) as! PursuitChallenge
             return cell
         case isNextView:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: nextId, for: indexPath) as! NextPursuit
@@ -152,6 +175,7 @@ class PursuitsDetailController : UICollectionViewController, UICollectionViewDel
         collectionView?.register(PursuitTools.self, forCellWithReuseIdentifier: toolId)
         collectionView?.register(NextPursuit.self, forCellWithReuseIdentifier: nextId)
         collectionView?.register(PursuitSteps.self, forCellWithReuseIdentifier: stepId)
+        collectionView?.register(PursuitChallenge.self, forCellWithReuseIdentifier: challengeId)
         collectionView?.register(PursuitsDetailHeader.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerId)
         collectionView?.backgroundColor = .white
     }

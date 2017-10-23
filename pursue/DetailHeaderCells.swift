@@ -15,6 +15,7 @@ protocol PursuitDetailDelegate {
     func teamLabelSelected()
     func nextLabelSelected()
     func stepLabelSelected()
+    func challengeLabelSelected()
 }
 
 class DetailHeaderCells : UICollectionViewCell {
@@ -54,6 +55,14 @@ class DetailHeaderCells : UICollectionViewCell {
         return label
     }()
     
+    lazy var challengeLabel : UIButton = {
+        let label = UIButton()
+        label.setTitle("CHALLENGE", for: .normal)
+        label.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
+        label.addTarget(self, action: #selector(toggleChallengeLabel), for: .touchUpInside)
+        return label
+    }()
+    
     lazy var nextLabel : UIButton = {
         let label = UIButton()
         label.setTitle("NEXT", for: .normal)
@@ -85,6 +94,7 @@ class DetailHeaderCells : UICollectionViewCell {
     }()
     
     let teamLabelUnderline = UIView()
+    let challengeLabelUnderline = UIView()
     let savedLabelUnderline = UIView()
     let aboutLabelUnderline = UIView()
     let nextLabelUnderline = UIView()
@@ -96,9 +106,9 @@ class DetailHeaderCells : UICollectionViewCell {
     var trailing : NSLayoutConstraint?
     
     func setupView(){
-        stackView = UIStackView(arrangedSubviews: [aboutButton, stepsLabel, nextLabel, teamLabel, toolsLabel, savedLabel])
+        stackView = UIStackView(arrangedSubviews: [aboutButton, stepsLabel, nextLabel, challengeLabel, teamLabel, toolsLabel, savedLabel])
         stackView.axis = .horizontal
-        stackView.spacing = 30
+        stackView.spacing = 15
         stackView.translatesAutoresizingMaskIntoConstraints = false
     
         addSubview(stackView)
@@ -116,6 +126,7 @@ class DetailHeaderCells : UICollectionViewCell {
         toolsLabel.setTitleColor(.gray, for: .normal)
         teamLabel.setTitleColor(.gray, for: .normal)
         nextLabel.setTitleColor(.gray, for: .normal)
+        challengeLabel.setTitleColor(.gray, for: .normal)
         
         aboutActive()
         
@@ -132,6 +143,7 @@ class DetailHeaderCells : UICollectionViewCell {
         toolsLabelUnderline.isHidden = true
         savedLabelUnderline.isHidden = true
         nextLabelUnderline.isHidden = true
+        challengeLabelUnderline.isHidden = true
         
         let viewCenter = frame.midX / 3
         let margins = layoutMarginsGuide
@@ -139,8 +151,8 @@ class DetailHeaderCells : UICollectionViewCell {
         
         if aboutLabelUnderline.isHidden == false {
             stackView.updateConstraints()
-            stackView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: buttonCenter + viewCenter + 50).isActive = true
-            stackView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: buttonCenter + viewCenter).isActive = true
+            stackView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: buttonCenter + viewCenter + 30).isActive = true
+            stackView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: buttonCenter + viewCenter - 45).isActive = true
         } else {
             stackView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: buttonCenter + viewCenter + 50).isActive = true
             stackView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: buttonCenter + viewCenter).isActive = true
@@ -159,11 +171,53 @@ class DetailHeaderCells : UICollectionViewCell {
         toolsLabel.setTitleColor(.gray, for: .normal)
         teamLabel.setTitleColor(.black, for: .normal)
         nextLabel.setTitleColor(.gray, for: .normal)
+        challengeLabel.setTitleColor(.gray, for: .normal)
         
         teamActive()
         
         addSubview(teamLabelUnderline)
         teamLabelUnderline.anchor(top: nil, left: teamLabel.leftAnchor, bottom: bottomAnchor, right: teamLabel.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 2.5)
+        
+    }
+    
+    @objc func toggleChallengeLabel(){
+        challengeLabelUnderline.backgroundColor = .black
+        
+        challengeLabel.setTitleColor(.black, for: .normal)
+        stepsLabel.setTitleColor(.gray, for: .normal)
+        aboutButton.setTitleColor(.gray, for: .normal)
+        savedLabel.setTitleColor(.gray, for: .normal)
+        toolsLabel.setTitleColor(.gray, for: .normal)
+        teamLabel.setTitleColor(.gray, for: .normal)
+        nextLabel.setTitleColor(.gray, for: .normal)
+        
+        challengeActive()
+        
+        addSubview(challengeLabelUnderline)
+        challengeLabelUnderline.anchor(top: nil, left: challengeLabel.leftAnchor, bottom: bottomAnchor, right: challengeLabel.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 2.5)
+    }
+    
+    func challengeActive(){
+        delegate?.challengeLabelSelected()
+        
+        aboutLabelUnderline.isHidden = true
+        stepsLabelUnderline.isHidden = true
+        toolsLabelUnderline.isHidden = true
+        savedLabelUnderline.isHidden = true
+        teamLabelUnderline.isHidden = true
+        nextLabelUnderline.isHidden = true
+        challengeLabelUnderline.isHidden = false
+        
+        let viewCenter = frame.midX / 12
+        let margins = layoutMarginsGuide
+        let buttonCenter = aboutButton.frame.midX
+        if challengeLabelUnderline.isHidden == false {
+            stackView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: buttonCenter + viewCenter - 100).isActive = true
+            stackView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: buttonCenter + viewCenter - 130).isActive = true
+        } else {
+            stackView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: buttonCenter + viewCenter - 100).isActive = true
+            stackView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: buttonCenter + viewCenter - 130).isActive = true
+        }
         
     }
     
@@ -176,6 +230,7 @@ class DetailHeaderCells : UICollectionViewCell {
         savedLabelUnderline.isHidden = true
         teamLabelUnderline.isHidden = false
         nextLabelUnderline.isHidden = true
+        challengeLabelUnderline.isHidden = true
         
         let viewCenter = frame.midX / 12
         let margins = layoutMarginsGuide
@@ -202,6 +257,7 @@ class DetailHeaderCells : UICollectionViewCell {
         toolsLabel.setTitleColor(.black, for: .normal)
         teamLabel.setTitleColor(.gray, for: .normal)
         nextLabel.setTitleColor(.gray, for: .normal)
+        challengeLabel.setTitleColor(.gray, for: .normal)
         
         toolsActive()
         
@@ -219,6 +275,7 @@ class DetailHeaderCells : UICollectionViewCell {
         savedLabelUnderline.isHidden = true
         toolsLabelUnderline.isHidden = false
         nextLabelUnderline.isHidden = true
+        challengeLabelUnderline.isHidden = true
         
         let viewCenter = frame.midX / 16
         let margins = layoutMarginsGuide
@@ -246,6 +303,7 @@ class DetailHeaderCells : UICollectionViewCell {
         toolsLabel.setTitleColor(.gray, for: .normal)
         teamLabel.setTitleColor(.gray, for: .normal)
         nextLabel.setTitleColor(.gray, for: .normal)
+        challengeLabel.setTitleColor(.gray, for: .normal)
         
         stepsActive()
         
@@ -263,6 +321,7 @@ class DetailHeaderCells : UICollectionViewCell {
         toolsLabelUnderline.isHidden = true
         teamLabelUnderline.isHidden = true
         nextLabelUnderline.isHidden = true
+        challengeLabelUnderline.isHidden = true
         
         let viewCenter = frame.midX / 3
         let margins = layoutMarginsGuide
@@ -290,6 +349,7 @@ class DetailHeaderCells : UICollectionViewCell {
         toolsLabel.setTitleColor(.gray, for: .normal)
         teamLabel.setTitleColor(.gray, for: .normal)
         nextLabel.setTitleColor(.gray, for: .normal)
+        challengeLabel.setTitleColor(.gray, for: .normal)
         
         savedActive()
         
@@ -306,6 +366,7 @@ class DetailHeaderCells : UICollectionViewCell {
         teamLabelUnderline.isHidden = true
         stepsLabelUnderline.isHidden = true
         nextLabelUnderline.isHidden = true
+        challengeLabelUnderline.isHidden = true
 
         let viewCenter = frame.midX / 16
         let margins = layoutMarginsGuide
@@ -333,6 +394,7 @@ class DetailHeaderCells : UICollectionViewCell {
         toolsLabel.setTitleColor(.gray, for: .normal)
         teamLabel.setTitleColor(.gray, for: .normal)
         nextLabel.setTitleColor(.black, for: .normal)
+        challengeLabel.setTitleColor(.gray, for: .normal)
         
         nextActive()
         
@@ -349,6 +411,7 @@ class DetailHeaderCells : UICollectionViewCell {
         toolsLabelUnderline.isHidden = true
         teamLabelUnderline.isHidden = true
         aboutLabelUnderline.isHidden = true
+        challengeLabelUnderline.isHidden = true
         
         let viewCenter = frame.midX / 8
         let margins = layoutMarginsGuide

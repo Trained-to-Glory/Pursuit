@@ -15,6 +15,7 @@ protocol DetailCellChange {
     func changeTeam()
     func changeNext()
     func changeSteps()
+    func changeChallenge()
 }
 
 class PursuitsDetailHeader : UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, PursuitDetailDelegate {
@@ -25,7 +26,7 @@ class PursuitsDetailHeader : UICollectionViewCell, UICollectionViewDelegate, UIC
     var isTeamView = false
     var isNextView = false
     var isStepsView = false
-    var isMoved = false
+    var isChallenge = false
     
     func aboutLabelSelected() {
         changeDelegate?.changeAbout()
@@ -35,7 +36,22 @@ class PursuitsDetailHeader : UICollectionViewCell, UICollectionViewDelegate, UIC
         isTeamView = false
         isNextView = false
         isStepsView = false
+        isChallenge = false
         
+        collectionViewContainer.reloadData()
+        collectionViewContainer.updateConstraints()
+    }
+    
+    func challengeLabelSelected() {
+        changeDelegate?.changeChallenge()
+        
+        isAboutView = false
+        isSavedView = false
+        isToolsView = false
+        isTeamView = false
+        isNextView = false
+        isStepsView = false
+        isChallenge = true
         collectionViewContainer.reloadData()
         collectionViewContainer.updateConstraints()
     }
@@ -48,6 +64,7 @@ class PursuitsDetailHeader : UICollectionViewCell, UICollectionViewDelegate, UIC
         isTeamView = false
         isNextView = false
         isStepsView = false
+        isChallenge = false
         collectionViewContainer.reloadData()
         collectionViewContainer.updateConstraints()
 
@@ -61,7 +78,7 @@ class PursuitsDetailHeader : UICollectionViewCell, UICollectionViewDelegate, UIC
         isTeamView = false
         isNextView = false
         isStepsView = false
-        
+        isChallenge = false
         collectionViewContainer.reloadData()
         collectionViewContainer.updateConstraints()
     }
@@ -74,6 +91,7 @@ class PursuitsDetailHeader : UICollectionViewCell, UICollectionViewDelegate, UIC
         isTeamView = true
         isNextView = false
         isStepsView = false
+        isChallenge = false
         
         collectionViewContainer.reloadData()
         collectionViewContainer.updateConstraints()
@@ -88,6 +106,7 @@ class PursuitsDetailHeader : UICollectionViewCell, UICollectionViewDelegate, UIC
         isTeamView = false
         isNextView = true
         isStepsView = false
+        isChallenge = false
         
         collectionViewContainer.reloadData()
         collectionViewContainer.updateConstraints()
@@ -96,14 +115,13 @@ class PursuitsDetailHeader : UICollectionViewCell, UICollectionViewDelegate, UIC
     
     func stepLabelSelected() {
         changeDelegate?.changeSteps()
-        isMoved = true
-        
         isAboutView = false
         isSavedView = false
         isToolsView = false
         isTeamView = false
         isNextView = false
         isStepsView = true
+        isChallenge = false
         
         collectionViewContainer.reloadData()
         collectionViewContainer.updateConstraints()

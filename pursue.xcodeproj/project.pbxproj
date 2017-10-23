@@ -28,6 +28,8 @@
 		E61A41B01F952C0D002F4045 /* PostCommentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61A41AF1F952C0D002F4045 /* PostCommentsCell.swift */; };
 		E61A41B21F952EDD002F4045 /* RelatedPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61A41B11F952EDD002F4045 /* RelatedPostCell.swift */; };
 		E61A97BE1F7C3F4C00FB03ED /* ProfilePhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61A97BD1F7C3F4C00FB03ED /* ProfilePhotoCell.swift */; };
+		E61B48BA1F9E46CC00183449 /* PursuitChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61B48B91F9E46CC00183449 /* PursuitChallenge.swift */; };
+		E61B48BC1F9E48D300183449 /* PursuitChallengeCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61B48BB1F9E48D300183449 /* PursuitChallengeCells.swift */; };
 		E6235EA01F92B1CC00BF1FDE /* PostDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6235E9F1F92B1CC00BF1FDE /* PostDetailHeader.swift */; };
 		E6235EA21F92C70400BF1FDE /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6235EA11F92C70400BF1FDE /* PostView.swift */; };
 		E6235EA61F94160E00BF1FDE /* PostLikes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6235EA51F94160E00BF1FDE /* PostLikes.swift */; };
@@ -121,6 +123,8 @@
 		E61A41AF1F952C0D002F4045 /* PostCommentsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCommentsCell.swift; sourceTree = "<group>"; };
 		E61A41B11F952EDD002F4045 /* RelatedPostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelatedPostCell.swift; sourceTree = "<group>"; };
 		E61A97BD1F7C3F4C00FB03ED /* ProfilePhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePhotoCell.swift; sourceTree = "<group>"; };
+		E61B48B91F9E46CC00183449 /* PursuitChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PursuitChallenge.swift; sourceTree = "<group>"; };
+		E61B48BB1F9E48D300183449 /* PursuitChallengeCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PursuitChallengeCells.swift; sourceTree = "<group>"; };
 		E6235E9F1F92B1CC00BF1FDE /* PostDetailHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailHeader.swift; sourceTree = "<group>"; };
 		E6235EA11F92C70400BF1FDE /* PostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		E6235EA51F94160E00BF1FDE /* PostLikes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostLikes.swift; sourceTree = "<group>"; };
@@ -234,6 +238,8 @@
 				E63CC51E1F9AB2E9002DC733 /* PostToolsCell.swift */,
 				E66472601F97E85E006922C6 /* PursuitSteps.swift */,
 				E63CC5181F9A88D6002DC733 /* PostStepsCells.swift */,
+				E61B48B91F9E46CC00183449 /* PursuitChallenge.swift */,
+				E61B48BB1F9E48D300183449 /* PursuitChallengeCells.swift */,
 			);
 			name = Detail;
 			sourceTree = "<group>";
@@ -615,6 +621,7 @@
 				E6AB64DD1F7187A500033C09 /* CustomAnimationDismiss.swift in Sources */,
 				E6235EAA1F94232C00BF1FDE /* RelatedPost.swift in Sources */,
 				E6253F491F755C5A00F6CFE7 /* SkillsRow.swift in Sources */,
+				E61B48BC1F9E48D300183449 /* PursuitChallengeCells.swift in Sources */,
 				E6253F451F75566B00F6CFE7 /* SkillsList.swift in Sources */,
 				E6A273F91F68314F00F5B4C8 /* CustomImageView.swift in Sources */,
 				E6136E9D1F96592500E29101 /* PursuitAddons.swift in Sources */,
@@ -626,6 +633,7 @@
 				E61736E81F7B139800F34755 /* HomeCustomRow.swift in Sources */,
 				E6136EA61F968FC800E29101 /* PursuitsDetailHeader.swift in Sources */,
 				E6136EA31F968EAB00E29101 /* PursuitsDetailController.swift in Sources */,
+				E61B48BA1F9E46CC00183449 /* PursuitChallenge.swift in Sources */,
 				E64324AE1F7972100090075F /* PursuitHeader.swift in Sources */,
 				E6CE229B1F675B3D006C5755 /* ActionController.swift in Sources */,
 				E61736DE1F7AB6B200F34755 /* PursuitTommorrowSecondaryCard.swift in Sources */,
