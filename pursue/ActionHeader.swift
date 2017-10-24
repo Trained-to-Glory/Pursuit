@@ -30,8 +30,6 @@ class ActionHeader: HomeHeader {
         super.init(frame: frame)
         backgroundColor = .white
         pageTitle.text = "Pursue"
-        pageTitleDetail.isHidden = true
-        pursuitImageRow.isHidden = true
         homeCameraIcon.isHidden = true
         homeChatIcon.isHidden = true
 

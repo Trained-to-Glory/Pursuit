@@ -34,7 +34,7 @@ class PursuitAddonsToolRow : UICollectionViewCell, UICollectionViewDelegateFlowL
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: ((frame.width - 2) / 5) + 105, height: ((frame.width - 2) / 5) + 30)
+        return CGSize(width: ((frame.width - 2) / 5) + 100, height: ((frame.width - 2) / 5) + 30)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

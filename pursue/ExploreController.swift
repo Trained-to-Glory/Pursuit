@@ -11,25 +11,28 @@ import UIKit
 class ExploreController: UICollectionViewController, UICollectionViewDelegateFlowLayout, ExploreHeaderDelegate {
     
     let headerId = "headerId"
-    let skillsId = "skillsId"
-    let toolsId = "toolsId"
-    let leaderId = "leaderId"
+    let cellId = "cellId"
+    let peopleId = "peopleId"
+    let exerciseId = "exerciseId"
+    let challengeId = "challengeId"
+    let toolId = "toolId"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView?.backgroundColor = .white
         collectionView?.register(ExploreHeaderRow.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerId)
-        collectionView?.register(SkillsList.self, forCellWithReuseIdentifier: skillsId)
-        collectionView?.register(ToolsList.self, forCellWithReuseIdentifier: toolsId)
-        collectionView?.register(LeaderList.self, forCellWithReuseIdentifier: leaderId)
+        collectionView?.register(ExploreImageRow.self, forCellWithReuseIdentifier: cellId)
+        collectionView?.register(PeopleRow.self, forCellWithReuseIdentifier: peopleId)
+        collectionView?.register(ExploreChallengeRow.self, forCellWithReuseIdentifier: challengeId)
+        collectionView?.register(ExploreExerciseRow.self, forCellWithReuseIdentifier: exerciseId)
         self.navigationController?.isNavigationBarHidden = true
     }
     
     // MARK: - Setup Views
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.width, height: view.frame.width + 20)
+        return CGSize(width: view.frame.width, height: (view.frame.width / 8) + 5)
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -38,32 +41,51 @@ class ExploreController: UICollectionViewController, UICollectionViewDelegateFlo
         return header
     }
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell : SkillsList
-        
-        if indexPath.item == 0 {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: skillsId, for: indexPath) as! SkillsList
-        } else if indexPath.item == 1 {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: toolsId, for: indexPath) as! ToolsList
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        if section == 0 {
+            return UIEdgeInsetsMake(0, 0, 0, 0)
         } else {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: leaderId, for: indexPath) as! LeaderList
-            _ = UIEdgeInsetsMake(0, 0, 0, 0)
+            return UIEdgeInsetsMake(32, 0, 0, 0)
         }
-        
-        return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return  UIEdgeInsetsMake(32, 20, 0, 0)
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell : UICollectionViewCell
+        switch indexPath.item {
+        case 0:
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ExploreImageRow
+            return cell
+        case 1:
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: peopleId, for: indexPath) as! PeopleRow
+            return cell
+        case 2:
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: challengeId, for: indexPath) as! ExploreChallengeRow
+            return cell
+        case 3:
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: exerciseId, for: indexPath) as! ExploreExerciseRow
+            return cell
+        default:
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: exerciseId, for: indexPath) as! ExploreExerciseRow
+            return cell
+        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-        return CGSize(width: view.frame.width, height: view.frame.width)
+        switch indexPath.item {
+        case 0:
+            return CGSize(width: view.frame.width, height: 260)
+        case 1:
+            return CGSize(width: view.frame.width, height: 210)
+        case 2:
+            return CGSize(width: view.frame.width, height: 210)
+        default:
+            return CGSize(width: view.frame.width, height: 260)
+        }
     }
     
     func handleCamera(for cell: ExploreHeaderRow) {

@@ -30,9 +30,6 @@ class PursuitHeader: HomeHeader {
         super.setupViews()
         
         pageTitle.text = "Design"
-        pageTitleDetail.isHidden = true
-        pursuitImageRow.isHidden = true
-        backgroundColor = .clear
         
         addSubview(pageTitle)
         pageTitle.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 0, height: 30)

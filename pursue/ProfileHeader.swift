@@ -175,9 +175,7 @@ class ProfileHeader: HomeHeader {
         addSubview(cameraIcon)
         
         pageTitle.text = "Test27"
-        pageTitleDetail.isHidden = true
-        pursuitImageRow.isHidden = true
-        
+
         profileImageView.anchor(top: chatIcon.bottomAnchor, left: nil, bottom: nil, right: nil, paddingTop: 48, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 80, height: 80)
         profileImageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         

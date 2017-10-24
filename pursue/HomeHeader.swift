@@ -42,8 +42,6 @@ class HomeHeader: ExploreHeaderRow {
         backgroundColor = .clear
         
         pageTitle.text = "Home"
-        pageTitleDetail.isHidden = true
-        pursuitImageRow.isHidden = true
         
         addSubview(pageTitle)
          pageTitle.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 0, height: 30)
