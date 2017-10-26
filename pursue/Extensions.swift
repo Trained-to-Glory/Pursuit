@@ -64,3 +64,17 @@ extension Array where Element: Equatable {
     }
 }
 
+class PathView: UIView {
+    
+    var path: UIBezierPath?           { didSet { setNeedsDisplay() } }
+    var pathColor: UIColor = .blue    { didSet { setNeedsDisplay() } }
+    
+    override func draw(_ rect: CGRect) {
+        // stroke the path
+        
+        pathColor.setStroke()
+        path?.stroke()
+    }
+    
+}
+

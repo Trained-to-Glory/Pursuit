@@ -16,6 +16,7 @@ class ExploreController: UICollectionViewController, UICollectionViewDelegateFlo
     let exerciseId = "exerciseId"
     let challengeId = "challengeId"
     let toolId = "toolId"
+    let categoryId = "cateogryId"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,7 @@ class ExploreController: UICollectionViewController, UICollectionViewDelegateFlo
         collectionView?.register(PeopleRow.self, forCellWithReuseIdentifier: peopleId)
         collectionView?.register(ExploreChallengeRow.self, forCellWithReuseIdentifier: challengeId)
         collectionView?.register(ExploreExerciseRow.self, forCellWithReuseIdentifier: exerciseId)
+        collectionView?.register(ExploreCategoryRow.self, forCellWithReuseIdentifier: categoryId)
         self.navigationController?.isNavigationBarHidden = true
     }
     
@@ -54,15 +56,20 @@ class ExploreController: UICollectionViewController, UICollectionViewDelegateFlo
         let cell : UICollectionViewCell
         switch indexPath.item {
         case 0:
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ExploreImageRow
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: categoryId, for: indexPath) as! ExploreCategoryRow
             return cell
         case 1:
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ExploreImageRow
+            return cell
+            
+        case 2:
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: peopleId, for: indexPath) as! PeopleRow
             return cell
-        case 2:
+            
+        case 3:
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: challengeId, for: indexPath) as! ExploreChallengeRow
             return cell
-        case 3:
+        case 4:
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: exerciseId, for: indexPath) as! ExploreExerciseRow
             return cell
         default:
@@ -72,17 +79,19 @@ class ExploreController: UICollectionViewController, UICollectionViewDelegateFlo
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch indexPath.item {
         case 0:
-            return CGSize(width: view.frame.width, height: 260)
+            return CGSize(width: view.frame.width, height: 110)
         case 1:
-            return CGSize(width: view.frame.width, height: 210)
+            return CGSize(width: view.frame.width, height: 260)
         case 2:
             return CGSize(width: view.frame.width, height: 210)
+        case 3:
+            return CGSize(width: view.frame.width, height: 320)
         default:
             return CGSize(width: view.frame.width, height: 260)
         }

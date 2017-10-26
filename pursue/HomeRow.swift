@@ -22,9 +22,9 @@ class HomeRow: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewD
     
     let rowLabel : UILabel = {
         let label = UILabel()
-        label.text = "Today's Picks"
+        label.text = "TODAY'S PICKS"
         label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.font = UIFont.boldSystemFont(ofSize: 12)
         return label
     }()
     

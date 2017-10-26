@@ -19,6 +19,7 @@ class ExploreExercisesRowCells  : UICollectionViewCell {
     let exploreLabel : UILabel = {
         let label = UILabel()
         label.text = "Battle"
+        label.numberOfLines = 2
         label.font = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight(rawValue: 25))
         return label
     }()
@@ -43,7 +44,7 @@ class ExploreExercisesRowCells  : UICollectionViewCell {
         addSubview(exploreButton)
         exploreButton.addSubview(exploreImage)
         
-        exploreButton.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 175, height: 100)
+        exploreButton.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 200, height: 125)
         exploreImage.anchor(top: exploreButton.topAnchor, left: exploreButton.leftAnchor, bottom: exploreButton.bottomAnchor, right: exploreButton.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         setupCardDetails()
     }

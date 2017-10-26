@@ -17,6 +17,7 @@ class PursuitsController: UICollectionViewController, UICollectionViewDelegateFl
     let tomorrowId = "tomorrowId"
     let pursuitLaterId = "pursuitLaterId"
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView?.backgroundColor = .white
@@ -71,7 +72,7 @@ class PursuitsController: UICollectionViewController, UICollectionViewDelegateFl
         
         switch indexPath.item {
         case 0:
-            return CGSize(width: view.frame.width, height: view.frame.width + 270)
+            return CGSize(width: view.frame.width, height: view.frame.width + 300)
         case 2:
             return CGSize(width: view.frame.width, height: 270)
         default:
@@ -82,7 +83,7 @@ class PursuitsController: UICollectionViewController, UICollectionViewDelegateFl
 
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.width, height: (view.frame.width / 8) + 30)
+        return CGSize(width: view.frame.width, height: (view.frame.width / 8) + 50)
     }
     
     func pursuitSelected(for cell : PursuitTodayPrimaryCard){

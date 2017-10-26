@@ -18,8 +18,8 @@ class PursuitTodayPrimaryCard: UICollectionViewCell, UICollectionViewDelegateFlo
     
     let titleLabel : UILabel = {
        let label = UILabel()
-        label.text = "Today"
-        label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.text = "TODAY"
+        label.font = UIFont.boldSystemFont(ofSize: 12)
         label.textColor = .black
         return label
     }()
@@ -154,7 +154,7 @@ class PursuitTodayPrimaryCard: UICollectionViewCell, UICollectionViewDelegateFlo
         addSubview(titleLabel)
         addSubview(catchUpLabel)
         
-        titleLabel.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 100, height: 20)
+        titleLabel.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 8, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 100, height: 20)
         catchUpLabel.anchor(top: titleLabel.topAnchor, left: nil, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 12, width: 90, height: 20)
     }
     
@@ -166,8 +166,6 @@ class PursuitTodayPrimaryCard: UICollectionViewCell, UICollectionViewDelegateFlo
     
     
     func setupCardView(){
-        backgroundColor = .clear
-        
         setupTitleForCardView()
         
         addSubview(cardImage)

@@ -46,6 +46,8 @@
 		E6253F3E1F75444100F6CFE7 /* ExploreHeaderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6253F3D1F75444100F6CFE7 /* ExploreHeaderRow.swift */; };
 		E6253F5B1F76EB2400F6CFE7 /* ActionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6253F5A1F76EB2400F6CFE7 /* ActionHeader.swift */; };
 		E6253F5F1F76EE9900F6CFE7 /* ActionExplanation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6253F5E1F76EE9900F6CFE7 /* ActionExplanation.swift */; };
+		E634E6A51FA175A4000F329C /* ExploreCategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E634E6A41FA175A4000F329C /* ExploreCategoryRow.swift */; };
+		E634E6A71FA175D4000F329C /* ExploreCategoryCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = E634E6A61FA175D4000F329C /* ExploreCategoryCells.swift */; };
 		E63CC5191F9A88D6002DC733 /* PostStepsCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63CC5181F9A88D6002DC733 /* PostStepsCells.swift */; };
 		E63CC51B1F9A99A5002DC733 /* NextPursuitCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63CC51A1F9A99A5002DC733 /* NextPursuitCells.swift */; };
 		E63CC51D1F9A9A7E002DC733 /* NextPursuitCellsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63CC51C1F9A9A7E002DC733 /* NextPursuitCellsContainer.swift */; };
@@ -139,6 +141,8 @@
 		E6253F3D1F75444100F6CFE7 /* ExploreHeaderRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreHeaderRow.swift; sourceTree = "<group>"; };
 		E6253F5A1F76EB2400F6CFE7 /* ActionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionHeader.swift; sourceTree = "<group>"; };
 		E6253F5E1F76EE9900F6CFE7 /* ActionExplanation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionExplanation.swift; sourceTree = "<group>"; };
+		E634E6A41FA175A4000F329C /* ExploreCategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCategoryRow.swift; sourceTree = "<group>"; };
+		E634E6A61FA175D4000F329C /* ExploreCategoryCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCategoryCells.swift; sourceTree = "<group>"; };
 		E63CC5181F9A88D6002DC733 /* PostStepsCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStepsCells.swift; sourceTree = "<group>"; };
 		E63CC51A1F9A99A5002DC733 /* NextPursuitCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextPursuitCells.swift; sourceTree = "<group>"; };
 		E63CC51C1F9A9A7E002DC733 /* NextPursuitCellsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextPursuitCellsContainer.swift; sourceTree = "<group>"; };
@@ -424,6 +428,8 @@
 				E61B48C71F9EB73700183449 /* ExploreChallengeCells.swift */,
 				E623F1461F9FB83500F8BDA7 /* ExploreExerciseRow.swift */,
 				E623F1481F9FB93100F8BDA7 /* ExploreExercisesRowCells.swift */,
+				E634E6A41FA175A4000F329C /* ExploreCategoryRow.swift */,
+				E634E6A61FA175D4000F329C /* ExploreCategoryCells.swift */,
 				E6253F3D1F75444100F6CFE7 /* ExploreHeaderRow.swift */,
 			);
 			name = Explore;
@@ -638,6 +644,7 @@
 				E6CE229E1F67616F006C5755 /* CameraController.swift in Sources */,
 				E66472611F97E85E006922C6 /* PursuitSteps.swift in Sources */,
 				E6CE22921F675969006C5755 /* HomeController.swift in Sources */,
+				E634E6A51FA175A4000F329C /* ExploreCategoryRow.swift in Sources */,
 				E664725F1F97E813006922C6 /* NextPursuit.swift in Sources */,
 				E6AB64DF1F7187BF00033C09 /* CustomAnimationPresentor.swift in Sources */,
 				E6A274001F68327F00F5B4C8 /* User.swift in Sources */,
@@ -665,6 +672,7 @@
 				E6CE22981F675A48006C5755 /* ProfileController.swift in Sources */,
 				E61A97BE1F7C3F4C00FB03ED /* ProfilePhotoCell.swift in Sources */,
 				E63CC51D1F9A9A7E002DC733 /* NextPursuitCellsContainer.swift in Sources */,
+				E634E6A71FA175D4000F329C /* ExploreCategoryCells.swift in Sources */,
 				E623F1471F9FB83500F8BDA7 /* ExploreExerciseRow.swift in Sources */,
 				E6AB64E81F7188CB00033C09 /* SharePhotoController.swift in Sources */,
 				E6235EA01F92B1CC00BF1FDE /* PostDetailHeader.swift in Sources */,

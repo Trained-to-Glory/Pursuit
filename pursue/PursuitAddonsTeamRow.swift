@@ -21,8 +21,8 @@ class PursuitAddonsTeamRow : UICollectionViewCell, UICollectionViewDelegateFlowL
     
     let teamLabel : UILabel =  {
         let label = UILabel()
-        label.text = "Team"
-        label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.text = "TEAM"
+        label.font = UIFont.boldSystemFont(ofSize: 12)
         label.textColor = .black
         return label
     }()
@@ -51,7 +51,7 @@ class PursuitAddonsTeamRow : UICollectionViewCell, UICollectionViewDelegateFlowL
         addSubview(teamLabel)
         addSubview(collectionViewContainer)
         
-        teamLabel.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 120, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 0, height: 16)
+        teamLabel.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 128, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 0, height: 16)
         collectionViewContainer.anchor(top: teamLabel.topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 24, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 120)
     }
     

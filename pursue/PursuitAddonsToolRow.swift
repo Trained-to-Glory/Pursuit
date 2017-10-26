@@ -21,8 +21,8 @@ class PursuitAddonsToolRow : UICollectionViewCell, UICollectionViewDelegateFlowL
     
     let toolLabel : UILabel =  {
         let label = UILabel()
-        label.text = "Tools"
-        label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.text = "TOOLS"
+        label.font = UIFont.boldSystemFont(ofSize: 12)
         label.textColor = .black
         return label
     }()
@@ -50,7 +50,7 @@ class PursuitAddonsToolRow : UICollectionViewCell, UICollectionViewDelegateFlowL
         addSubview(toolLabel)
         addSubview(collectionViewContainer)
         
-        toolLabel.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 120, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 0, height: 16)
+        toolLabel.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 134, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 0, height: 16)
         collectionViewContainer.anchor(top: toolLabel.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 164)
     }
     

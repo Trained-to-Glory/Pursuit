@@ -96,8 +96,10 @@ class PursuitChallengeCells : UICollectionViewCell {
         return label
     }()
     
+    
     let bottomDividerView = UIView()
     var stackView = UIStackView()
+    let pathView = PathView()
     
     func setupScores(){
         stackView = UIStackView(arrangedSubviews: [userPercentage, addedUserPercentage])
@@ -117,10 +119,41 @@ class PursuitChallengeCells : UICollectionViewCell {
         finishingDateLabel.centerXAnchor.constraint(equalTo: pursuitName.centerXAnchor).isActive = true
     }
     
+    func setupDiagonalLine(){
+        // create path
+        let path = UIBezierPath()
+        path.move(to: CGPoint(x: 10, y: 10))
+        path.addLine(to: CGPoint(x: 100, y: 100))
+        path.lineWidth = 3
+
+        
+        // Create a `CAShapeLayer` that uses that `UIBezierPath`:
+        
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = path.cgPath
+        shapeLayer.strokeColor = UIColor.blue.cgColor
+        shapeLayer.fillColor = UIColor.clear.cgColor
+        shapeLayer.lineWidth = 3
+        
+        // Add that `CAShapeLayer` to your view's layer:
+        
+        layer.addSublayer(shapeLayer)
+        addSubview(pathView)
+        pathView.anchor(top: addedUserPhoto.topAnchor, left: nil, bottom: addedUserPhoto.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        pathView.leadingAnchor.constraint(equalTo: addedUserPhoto.leadingAnchor).isActive = true
+        pathView.trailingAnchor.constraint(equalTo: addedUserPhoto.trailingAnchor).isActive = true
+        pathView.backgroundColor = .clear
+        
+        pathView.path = path
+    }
+    
     func setupAddedUser(){
         addSubview(addedUserPhoto)
         addSubview(addedFullnameLabel)
         addSubview(addedUsernameLabel)
+        addSubview(pathView)
+        
+        pathView.translatesAutoresizingMaskIntoConstraints = false
         
         addedUserPhoto.anchor(top: topAnchor, left: nil, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 12, width: 60, height: 60)
         addedFullnameLabel.anchor(top: addedUserPhoto.bottomAnchor, left: nil, bottom: nil, right: addedUserPhoto.rightAnchor, paddingTop: 12, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 150, height: 16)

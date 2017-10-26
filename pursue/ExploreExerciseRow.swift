@@ -37,7 +37,7 @@ class ExploreExerciseRow : UICollectionViewCell, UICollectionViewDelegate, UICol
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: ((frame.width - 2) / 3) + 50, height: ((frame.width - 2) / 3) - 10)
+        return CGSize(width: ((frame.width - 2) / 2) + 15, height: ((frame.width - 2) / 2) + 20)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
