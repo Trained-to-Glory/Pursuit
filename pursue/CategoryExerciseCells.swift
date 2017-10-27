@@ -1,14 +1,14 @@
 //
-//  ExploreChallengeRowCells.swift
+//  CategoryExerciseCells.swift
 //  pursue
 //
-//  Created by Jaylen Sanders on 10/24/17.
+//  Created by Jaylen Sanders on 10/26/17.
 //  Copyright © 2017 Glory. All rights reserved.
 //
 
 import UIKit
 
-class ExploreExercisesRowCells  : UICollectionViewCell {
+class CategoryExerciseCells  : UICollectionViewCell {
     
     let exploreButton : UIButton = {
         let button = UIButton()
@@ -39,17 +39,13 @@ class ExploreExercisesRowCells  : UICollectionViewCell {
         exploreLabel.anchor(top: exploreImage.bottomAnchor, left: exploreImage.leftAnchor, bottom: nil, right: exploreImage.rightAnchor, paddingTop: 16, paddingLeft: 0, paddingBottom: 0, paddingRight: 8, width: 0, height: 14)
     }
     
-    func setupView(){
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         addSubview(exploreButton)
         exploreButton.addSubview(exploreImage)
         
         exploreButton.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 200, height: 125)
         exploreImage.anchor(top: exploreButton.topAnchor, left: exploreButton.leftAnchor, bottom: exploreButton.bottomAnchor, right: exploreButton.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupView()
         setupCardDetails()
     }
     
@@ -58,4 +54,3 @@ class ExploreExercisesRowCells  : UICollectionViewCell {
     }
     
 }
-

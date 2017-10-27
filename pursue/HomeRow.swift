@@ -12,14 +12,6 @@ class HomeRow: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewD
     
     var accessHomeController : HomeController?
     
-    let homeCardInfoLabel : UILabel = {
-       let label = UILabel()
-        label.text = "Return To IMAX Screens"
-        label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 10)
-        return label
-    }()
-    
     let rowLabel : UILabel = {
         let label = UILabel()
         label.text = "TODAY'S PICKS"
@@ -30,10 +22,10 @@ class HomeRow: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewD
     
     let moreLabel : UIButton = {
         let button = UIButton()
-        button.setTitle("View More", for: .normal)
-        button.setTitleColor(.gray, for: .normal)
+        button.setTitle("SEE ALL", for: .normal)
+        button.setTitleColor(.blue, for: .normal)
         button.contentHorizontalAlignment = .right
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
         return button
     }()
     
@@ -84,6 +76,7 @@ class HomeRow: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewD
         addSubview(bottomDividerView)
         
         rowLabel.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 12, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 140, height: 22)
+//        moreLabel.anchor(top: rowLabel.topAnchor, left: nil, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 12, width: moreLabel.intrinsicContentSize.width, height: 22)
         postCollection.anchor(top: rowLabel.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 12, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 330)
         bottomDividerView.anchor(top: bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0.6)
         postCollection.register(HomeRowCells.self, forCellWithReuseIdentifier: cellId)

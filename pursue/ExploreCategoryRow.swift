@@ -2,7 +2,7 @@ import UIKit
 
 class ExploreCategoryRow : UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    var accessHomeController : HomeController?
+    var accessExploreController : ExploreController?
     
     let rowLabel : UILabel = {
         let label = UILabel()
@@ -43,7 +43,7 @@ class ExploreCategoryRow : UICollectionViewCell, UICollectionViewDelegate, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        accessHomeController?.showPostDetailForPost()
+        accessExploreController?.showCategoryDetailForCateogry()
     }
     
     

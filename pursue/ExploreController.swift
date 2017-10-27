@@ -82,6 +82,12 @@ class ExploreController: UICollectionViewController, UICollectionViewDelegateFlo
         return 5
     }
     
+    func showCategoryDetailForCateogry(){
+        let layout = UICollectionViewFlowLayout()
+        let cateogryDetailController = CategoryDetailController(collectionViewLayout: layout)
+        navigationController?.pushViewController(cateogryDetailController, animated: true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch indexPath.item {
         case 0:

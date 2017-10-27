@@ -74,6 +74,4 @@ class ExploreImageRow : UICollectionViewCell, UICollectionViewDelegate, UICollec
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    
 }

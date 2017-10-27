@@ -13,6 +13,8 @@ class ProfileController: UICollectionViewController, UICollectionViewDelegateFlo
     
     let cellId = "cellId"
     let headerId = "headerId"
+    let pursuitsId = "pursuitsId"
+    let postId = "postId"
     var user : User?
     var userId : String?
     
@@ -23,9 +25,10 @@ class ProfileController: UICollectionViewController, UICollectionViewDelegateFlo
         
         
         collectionView?.backgroundColor = .white
-        collectionView?.register(ProfileDetailsCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView?.register(ProfileAboutRow.self, forCellWithReuseIdentifier: cellId)
+        collectionView?.register(ProfilePursuitsRow.self, forCellWithReuseIdentifier: pursuitsId)
         collectionView?.register(ProfileHeader.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerId)
-        
+        collectionView?.register(ProfilePostRow.self, forCellWithReuseIdentifier: postId)
         fetchUser()
 
     }
@@ -68,7 +71,7 @@ class ProfileController: UICollectionViewController, UICollectionViewDelegateFlo
     // MARK: - Setup View
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.width, height: view.frame.width - 20)
+        return CGSize(width: view.frame.width, height: (view.frame.width / 8) + 5)
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -79,18 +82,40 @@ class ProfileController: UICollectionViewController, UICollectionViewDelegateFlo
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ProfileDetailsCell
-        return cell
+        let cell : UICollectionViewCell
+        switch indexPath.item {
+        case 0:
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ProfileAboutRow
+            return cell
+        case 1:
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: pursuitsId, for: indexPath) as! ProfilePursuitsRow
+            return cell
+        case 2:
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: postId, for: indexPath) as! ProfilePostRow
+            return cell
+        default:
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: pursuitsId, for: indexPath) as! ProfilePursuitsRow
+            return cell
+        }
     }
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            return CGSize(width: view.frame.width, height: view.frame.height)
-
+        
+        switch indexPath.item {
+        case 0:
+            return CGSize(width: view.frame.width, height: 264)
+        case 1:
+            return CGSize(width: view.frame.width, height: 350)
+        case 2:
+            return CGSize(width: view.frame.width, height: 435)
+        default:
+            return CGSize(width: view.frame.width, height: 264)
+        }
     }
         
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 3
     }
     
     func handleCamera(for cell: ProfileHeader) {

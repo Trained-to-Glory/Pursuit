@@ -1,14 +1,14 @@
 //
-//  ExploreChallengesRow.swift
+//  CategoryChallengeRow.swift
 //  pursue
 //
-//  Created by Jaylen Sanders on 10/24/17.
+//  Created by Jaylen Sanders on 10/26/17.
 //  Copyright © 2017 Glory. All rights reserved.
 //
 
 import UIKit
 
-class ExploreExerciseRow : UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class CategoryChallengeRow : UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var accessHomeController : HomeController?
     
@@ -37,12 +37,12 @@ class ExploreExerciseRow : UICollectionViewCell, UICollectionViewDelegate, UICol
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: ((frame.width - 2) / 2) + 15, height: ((frame.width - 2) / 2) + 20)
+        return CGSize(width: ((frame.width - 2) / 2) + 85, height: ((frame.width - 2) / 2) + 150)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ExploreExercisesRowCells
-        rowLabel.text = "ANIMAL EXERCISES"
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CategoryChallengeCells
+        rowLabel.text = "ANIMAL CHALLENGES"
         return cell
     }
     
@@ -54,20 +54,17 @@ class ExploreExerciseRow : UICollectionViewCell, UICollectionViewDelegate, UICol
         accessHomeController?.showPostDetailForPost()
     }
     
-    func setupView(){
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         addSubview(postCollection)
         addSubview(rowLabel)
         
         rowLabel.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 48, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 140, height: 22)
         postCollection.anchor(top: rowLabel.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 12, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
-        postCollection.register(ExploreExercisesRowCells.self, forCellWithReuseIdentifier: cellId)
+        postCollection.register(CategoryChallengeCells.self, forCellWithReuseIdentifier: cellId)
         postCollection.dataSource = self
         postCollection.delegate = self
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupView()
     }
     
     
