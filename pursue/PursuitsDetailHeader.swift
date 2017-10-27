@@ -145,12 +145,6 @@ class PursuitsDetailHeader : UICollectionViewCell, UICollectionViewDelegate, UIC
         return button
     }()
     
-    let cameraIcon : UIButton = {
-        let button = UIButton()
-        button.setBackgroundImage(#imageLiteral(resourceName: "camera3").withRenderingMode(.alwaysOriginal), for: .normal)
-        return button
-    }()
-    
     let postImage : UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
@@ -191,11 +185,9 @@ class PursuitsDetailHeader : UICollectionViewCell, UICollectionViewDelegate, UIC
     func setupTopNavBar(){
         addSubview(backButton)
         addSubview(chatIcon)
-        addSubview(cameraIcon)
         
         backButton.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 30, height: 30)
         chatIcon.anchor(top: topAnchor, left: nil, bottom: nil, right: rightAnchor, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 24, width: 0, height: 20)
-        cameraIcon.anchor(top: chatIcon.topAnchor, left: nil, bottom: chatIcon.bottomAnchor, right: chatIcon.leftAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 30, width: 25, height: 0)
     }
     
     func pageOptions(){

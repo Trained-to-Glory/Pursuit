@@ -21,7 +21,7 @@ class HomeRowCells : UICollectionViewCell {
     let homeMainDescription : UILabel = {
        let label = UILabel()
         label.text = "Wonder Woman"
-        label.font = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight(rawValue: 25))
+        label.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight(rawValue: 25))
         label.numberOfLines = 0
         label.textColor = .black
         return label
