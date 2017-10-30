@@ -42,9 +42,7 @@ class HomeRowCells : UICollectionViewCell {
         return card
     }()
     
-    func setupView() {
-        backgroundColor = .clear
-        
+    func setupView() {        
         addSubview(homeImage)
         addSubview(homeMainDescription)
         addSubview(homeSubDesctiption)

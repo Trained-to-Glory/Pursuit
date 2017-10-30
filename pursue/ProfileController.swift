@@ -17,6 +17,7 @@ class ProfileController: UICollectionViewController, UICollectionViewDelegateFlo
     let postId = "postId"
     var user : User?
     var userId : String?
+    let addedId = "addedId"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,7 @@ class ProfileController: UICollectionViewController, UICollectionViewDelegateFlo
         collectionView?.register(ProfilePursuitsRow.self, forCellWithReuseIdentifier: pursuitsId)
         collectionView?.register(ProfileHeader.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerId)
         collectionView?.register(ProfilePostRow.self, forCellWithReuseIdentifier: postId)
+        collectionView?.register(ProfileAddedRow.self, forCellWithReuseIdentifier: addedId)
         fetchUser()
 
     }
@@ -88,10 +90,13 @@ class ProfileController: UICollectionViewController, UICollectionViewDelegateFlo
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ProfileAboutRow
             return cell
         case 1:
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: pursuitsId, for: indexPath) as! ProfilePursuitsRow
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: postId, for: indexPath) as! ProfilePostRow
             return cell
         case 2:
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: postId, for: indexPath) as! ProfilePostRow
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: addedId, for: indexPath) as! ProfileAddedRow
+            return cell
+        case 3:
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: pursuitsId, for: indexPath) as! ProfilePursuitsRow
             return cell
         default:
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: pursuitsId, for: indexPath) as! ProfilePursuitsRow
@@ -106,16 +111,18 @@ class ProfileController: UICollectionViewController, UICollectionViewDelegateFlo
         case 0:
             return CGSize(width: view.frame.width, height: 264)
         case 1:
-            return CGSize(width: view.frame.width, height: 350)
-        case 2:
             return CGSize(width: view.frame.width, height: 435)
+        case 2:
+            return CGSize(width: view.frame.width, height: 260)
+        case 3:
+            return CGSize(width: view.frame.width, height: 350)
         default:
             return CGSize(width: view.frame.width, height: 264)
         }
     }
         
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     func handleCamera(for cell: ProfileHeader) {

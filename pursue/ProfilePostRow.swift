@@ -38,7 +38,7 @@ class ProfilePostRow : UICollectionViewCell, UICollectionViewDelegate, UICollect
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (frame.width / 2) - 30, height: frame.height)
+        return CGSize(width: (frame.width / 2) - 20, height: frame.height)
     }
     
     
