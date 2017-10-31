@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout, HomeHeaderDelegate {
+class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout, HomeHeaderDelegate, ChangeToFeed {
     
     let cellId = "cellId"
     let secondaryId = "secondaryId"
@@ -18,7 +18,6 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        delegate = self
         collectionView?.backgroundColor = .white
         collectionView?.register(HomeRow.self, forCellWithReuseIdentifier: cellId)
         collectionView?.register(HomeHeader.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerId)
@@ -44,6 +43,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! HomeRow
         cell.accessHomeController = self
+        cell.delegate = self
         return cell
     }
     
@@ -55,6 +55,11 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as! HomeHeader
         header.homeDelegate = self
         return header
+    }
+    
+    func handleChangeToFeed(for cell: HomeRow) {
+        let pursuits = FeedController(collectionViewLayout: UICollectionViewFlowLayout())
+        navigationController?.pushViewController(pursuits, animated: true)
     }
     
     func handleCamera(for cell: HomeHeader) {
@@ -77,10 +82,5 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         present(alertController, animated: true, completion: nil)
     }
     
-    func handleMessage(for cell: HomeHeader) {
-        let messageController = MessagesController()
-        let navController = UINavigationController(rootViewController: messageController)
-        present(navController, animated: true, completion: nil)
-    }
 
 }

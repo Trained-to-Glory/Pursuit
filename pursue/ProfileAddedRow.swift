@@ -19,7 +19,7 @@ class ProfileAddedRow : PeopleRow {
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(postCollection)
-        postCollection.anchor(top: rowLabel.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 6, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        postCollection.anchor(top: rowLabel.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 100)
         
         postCollection.register(PeopleAddedCells.self, forCellWithReuseIdentifier: addedId)
         postCollection.delegate = self

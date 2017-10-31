@@ -31,8 +31,6 @@ class ActionHeader: HomeHeader {
         backgroundColor = .white
         pageTitle.text = "Pursue"
         homeCameraIcon.isHidden = true
-        homeChatIcon.isHidden = true
-
     }
     
     required init?(coder aDecoder: NSCoder) {

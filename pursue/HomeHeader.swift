@@ -10,18 +10,10 @@ import UIKit
 
 protocol HomeHeaderDelegate {
     func handleCamera(for cell : HomeHeader)
-    func handleMessage(for cell : HomeHeader)
 }
 class HomeHeader: ExploreHeaderRow {
     
     var homeDelegate : HomeHeaderDelegate?
-    
-    let homeChatIcon : UIButton = {
-       let button = UIButton()
-        button.setBackgroundImage(#imageLiteral(resourceName: "send2").withRenderingMode(.alwaysOriginal), for: .normal)
-        button.addTarget(self, action: #selector(handleMessage), for: .touchUpInside)
-        return button
-    }()
     
     let homeCameraIcon : UIButton = {
        let button = UIButton()
@@ -34,9 +26,6 @@ class HomeHeader: ExploreHeaderRow {
         homeDelegate?.handleCamera(for: self)
     }
     
-    override func handleMessage(){
-        homeDelegate?.handleMessage(for: self)
-    }
     
     func setupViews(){
         backgroundColor = .clear

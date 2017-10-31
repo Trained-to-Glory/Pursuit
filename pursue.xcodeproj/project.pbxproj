@@ -10,6 +10,15 @@
 		77792961994B0D733CE1F3C7 /* Pods_pursue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC2EBDE7548534CF7FD043E /* Pods_pursue.framework */; };
 		E604CCED1FA7A58300A6D63E /* ProfileAddedRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E604CCEC1FA7A58300A6D63E /* ProfileAddedRow.swift */; };
 		E604CCEF1FA7A5CC00A6D63E /* PeopleAddedCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = E604CCEE1FA7A5CC00A6D63E /* PeopleAddedCells.swift */; };
+		E604CCF21FA7AD0A00A6D63E /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E604CCF11FA7AD0A00A6D63E /* FeedController.swift */; };
+		E604CCF41FA7AF1600A6D63E /* FeedHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E604CCF31FA7AF1600A6D63E /* FeedHeader.swift */; };
+		E604CCF61FA7B0D700A6D63E /* FeedRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E604CCF51FA7B0D700A6D63E /* FeedRow.swift */; };
+		E604CCF81FA7B27700A6D63E /* FeedRowCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = E604CCF71FA7B27700A6D63E /* FeedRowCells.swift */; };
+		E604CCFA1FA7CCD000A6D63E /* FeedLikesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E604CCF91FA7CCD000A6D63E /* FeedLikesCell.swift */; };
+		E604CCFC1FA7F0C500A6D63E /* FeedPictureRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E604CCFB1FA7F0C500A6D63E /* FeedPictureRow.swift */; };
+		E604CCFE1FA7F0EE00A6D63E /* FeedPictureRowCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = E604CCFD1FA7F0EE00A6D63E /* FeedPictureRowCells.swift */; };
+		E604CD001FA7F5C700A6D63E /* FeedChallengeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E604CCFF1FA7F5C700A6D63E /* FeedChallengeRow.swift */; };
+		E604CD021FA7F62E00A6D63E /* FeedChallengeCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = E604CD011FA7F62E00A6D63E /* FeedChallengeCells.swift */; };
 		E6136E9B1F95832A00E29101 /* TeamCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6136E9A1F95832A00E29101 /* TeamCells.swift */; };
 		E6136E9D1F96592500E29101 /* PursuitAddons.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6136E9C1F96592500E29101 /* PursuitAddons.swift */; };
 		E6136E9F1F965E1400E29101 /* PursuitAddonsTeamRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6136E9E1F965E1400E29101 /* PursuitAddonsTeamRow.swift */; };
@@ -123,6 +132,15 @@
 		CDC2EBDE7548534CF7FD043E /* Pods_pursue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pursue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E604CCEC1FA7A58300A6D63E /* ProfileAddedRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAddedRow.swift; sourceTree = "<group>"; };
 		E604CCEE1FA7A5CC00A6D63E /* PeopleAddedCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleAddedCells.swift; sourceTree = "<group>"; };
+		E604CCF11FA7AD0A00A6D63E /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
+		E604CCF31FA7AF1600A6D63E /* FeedHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedHeader.swift; sourceTree = "<group>"; };
+		E604CCF51FA7B0D700A6D63E /* FeedRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRow.swift; sourceTree = "<group>"; };
+		E604CCF71FA7B27700A6D63E /* FeedRowCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRowCells.swift; sourceTree = "<group>"; };
+		E604CCF91FA7CCD000A6D63E /* FeedLikesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLikesCell.swift; sourceTree = "<group>"; };
+		E604CCFB1FA7F0C500A6D63E /* FeedPictureRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPictureRow.swift; sourceTree = "<group>"; };
+		E604CCFD1FA7F0EE00A6D63E /* FeedPictureRowCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPictureRowCells.swift; sourceTree = "<group>"; };
+		E604CCFF1FA7F5C700A6D63E /* FeedChallengeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedChallengeRow.swift; sourceTree = "<group>"; };
+		E604CD011FA7F62E00A6D63E /* FeedChallengeCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedChallengeCells.swift; sourceTree = "<group>"; };
 		E6136E9A1F95832A00E29101 /* TeamCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamCells.swift; sourceTree = "<group>"; };
 		E6136E9C1F96592500E29101 /* PursuitAddons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PursuitAddons.swift; sourceTree = "<group>"; };
 		E6136E9E1F965E1400E29101 /* PursuitAddonsTeamRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PursuitAddonsTeamRow.swift; sourceTree = "<group>"; };
@@ -259,6 +277,22 @@
 				CDC2EBDE7548534CF7FD043E /* Pods_pursue.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E604CCF01FA7ACEB00A6D63E /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				E604CCF11FA7AD0A00A6D63E /* FeedController.swift */,
+				E604CCF31FA7AF1600A6D63E /* FeedHeader.swift */,
+				E604CCF51FA7B0D700A6D63E /* FeedRow.swift */,
+				E604CCF71FA7B27700A6D63E /* FeedRowCells.swift */,
+				E604CCF91FA7CCD000A6D63E /* FeedLikesCell.swift */,
+				E604CCFB1FA7F0C500A6D63E /* FeedPictureRow.swift */,
+				E604CCFD1FA7F0EE00A6D63E /* FeedPictureRowCells.swift */,
+				E604CCFF1FA7F5C700A6D63E /* FeedChallengeRow.swift */,
+				E604CD011FA7F62E00A6D63E /* FeedChallengeCells.swift */,
+			);
+			name = Feed;
 			sourceTree = "<group>";
 		};
 		E6136EA41F968FAB00E29101 /* Detail */ = {
@@ -416,6 +450,7 @@
 				E66436571FA24A4F00A9B0E7 /* Category */,
 				E6AB64CB1F6F557000033C09 /* Chat */,
 				E6CE22931F6759A8006C5755 /* Explore */,
+				E604CCF01FA7ACEB00A6D63E /* Feed */,
 				E6CE22901F67594C006C5755 /* Home */,
 				E6CE22891F671EC5006C5755 /* Login */,
 				E6A273FC1F68323F00F5B4C8 /* Models */,
@@ -676,6 +711,7 @@
 				E61A41AE1F952A1B002F4045 /* PostLikesCell.swift in Sources */,
 				E6136E9B1F95832A00E29101 /* TeamCells.swift in Sources */,
 				E63CC51F1F9AB2E9002DC733 /* PostToolsCell.swift in Sources */,
+				E604CCF61FA7B0D700A6D63E /* FeedRow.swift in Sources */,
 				E61736E21F7ACDD700F34755 /* HomeSecondaryRow.swift in Sources */,
 				E64324A81F7955AF0090075F /* PursuitsController.swift in Sources */,
 				E6AB64D71F6F687D00033C09 /* MessagesController.swift in Sources */,
@@ -683,6 +719,7 @@
 				E61B48C61F9EB6E500183449 /* ExploreChallengeRow.swift in Sources */,
 				E6235EAA1F94232C00BF1FDE /* RelatedPost.swift in Sources */,
 				E66436751FA273DA00A9B0E7 /* ProfilePursuitsCells.swift in Sources */,
+				E604CD001FA7F5C700A6D63E /* FeedChallengeRow.swift in Sources */,
 				E61B48BC1F9E48D300183449 /* PursuitChallengeCells.swift in Sources */,
 				E6A273F91F68314F00F5B4C8 /* CustomImageView.swift in Sources */,
 				E6136E9D1F96592500E29101 /* PursuitAddons.swift in Sources */,
@@ -711,6 +748,7 @@
 				E6AB64E21F7188A300033C09 /* PhotoSelectorController.swift in Sources */,
 				E66436771FA2968D00A9B0E7 /* ProfilePostRow.swift in Sources */,
 				E61B48BE1F9E80C000183449 /* ExploreImageRow.swift in Sources */,
+				E604CCFA1FA7CCD000A6D63E /* FeedLikesCell.swift in Sources */,
 				E6CE229E1F67616F006C5755 /* CameraController.swift in Sources */,
 				E66472611F97E85E006922C6 /* PursuitSteps.swift in Sources */,
 				E66436631FA24D0400A9B0E7 /* CategoryPeopleCells.swift in Sources */,
@@ -734,6 +772,7 @@
 				E6136EA11F965EA900E29101 /* PursuitAddonsToolRow.swift in Sources */,
 				E604CCEF1FA7A5CC00A6D63E /* PeopleAddedCells.swift in Sources */,
 				E66472631F97E8C1006922C6 /* PursuitTools.swift in Sources */,
+				E604CCFC1FA7F0C500A6D63E /* FeedPictureRow.swift in Sources */,
 				E63CC5191F9A88D6002DC733 /* PostStepsCells.swift in Sources */,
 				E66472651F97EA5F006922C6 /* DetailHeaderCells.swift in Sources */,
 				E66436671FA24D7700A9B0E7 /* CategoryChallengeCells.swift in Sources */,
@@ -748,20 +787,25 @@
 				E6CE22981F675A48006C5755 /* ProfileController.swift in Sources */,
 				E61A97BE1F7C3F4C00FB03ED /* ProfilePhotoCell.swift in Sources */,
 				E63CC51D1F9A9A7E002DC733 /* NextPursuitCellsContainer.swift in Sources */,
+				E604CCF41FA7AF1600A6D63E /* FeedHeader.swift in Sources */,
 				E634E6A71FA175D4000F329C /* ExploreCategoryCells.swift in Sources */,
 				E623F1471F9FB83500F8BDA7 /* ExploreExerciseRow.swift in Sources */,
 				E66436791FA2970500A9B0E7 /* ProfilePostCells.swift in Sources */,
 				E6AB64E81F7188CB00033C09 /* SharePhotoController.swift in Sources */,
 				E66436731FA272AD00A9B0E7 /* ProfilePursuitsRow.swift in Sources */,
+				E604CCF21FA7AD0A00A6D63E /* FeedController.swift in Sources */,
 				E6235EA01F92B1CC00BF1FDE /* PostDetailHeader.swift in Sources */,
 				E66436651FA24D3500A9B0E7 /* CategoryChallengeRow.swift in Sources */,
 				E6253F5F1F76EE9900F6CFE7 /* ActionExplanation.swift in Sources */,
+				E604CCFE1FA7F0EE00A6D63E /* FeedPictureRowCells.swift in Sources */,
 				E61758CD1F79DBA90038FAAB /* PursuitTodaySecondaryCard.swift in Sources */,
+				E604CCF81FA7B27700A6D63E /* FeedRowCells.swift in Sources */,
 				E6AB64CF1F6F566200033C09 /* ChatMessageCell.swift in Sources */,
 				E6136E9F1F965E1400E29101 /* PursuitAddonsTeamRow.swift in Sources */,
 				E67320201F8FE1DA000F6AAA /* PostDetailController.swift in Sources */,
 				E6AB64DB1F71878A00033C09 /* PreviewPhotoContainerView.swift in Sources */,
 				E6A273F71F6830BD00F5B4C8 /* ProfileHeader.swift in Sources */,
+				E604CD021FA7F62E00A6D63E /* FeedChallengeCells.swift in Sources */,
 				E6A273FB1F6831D700F5B4C8 /* ProfileDetailsCells.swift in Sources */,
 				E664366B1FA24E3200A9B0E7 /* CategoryExerciseCells.swift in Sources */,
 				E64324AC1F795C470090075F /* ActionFooter.swift in Sources */,

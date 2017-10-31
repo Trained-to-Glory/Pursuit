@@ -8,33 +8,43 @@
 
 import UIKit
 
+protocol ChangeToFeed {
+    func handleChangeToFeed(for cell: HomeRow)
+}
+
 class HomeRow: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var accessHomeController : HomeController?
+    var delegate : ChangeToFeed?
     
     let rowLabel : UILabel = {
         let label = UILabel()
         label.text = "TODAY'S PICKS"
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 12)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(feedChange))
+        label.addGestureRecognizer(tap)
+        label.isUserInteractionEnabled = true
         return label
     }()
     
-    let moreLabel : UIButton = {
+    lazy var moreButton : UIButton = {
         let button = UIButton()
-        button.setTitle("SEE ALL", for: .normal)
-        button.setTitleColor(.blue, for: .normal)
-        button.contentHorizontalAlignment = .right
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
+        button.setImage(#imageLiteral(resourceName: "view-more"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(feedChange), for: .touchUpInside)
         return button
     }()
+    
+    @objc func feedChange(){
+        delegate?.handleChangeToFeed(for: self)
+    }
     
     let cellId = "cellId"
     
     let postCollection : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
         return collectionView
@@ -63,20 +73,19 @@ class HomeRow: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewD
         accessHomeController?.showPostDetailForPost()
     }
     
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .clear
-        
         let bottomDividerView = UIView()
         bottomDividerView.backgroundColor = UIColor.init(white: 0, alpha: 0.2)
         
         addSubview(postCollection)
         addSubview(rowLabel)
         addSubview(bottomDividerView)
+        addSubview(moreButton)
         
-        rowLabel.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 12, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 140, height: 22)
-//        moreLabel.anchor(top: rowLabel.topAnchor, left: nil, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 12, width: moreLabel.intrinsicContentSize.width, height: 22)
+        rowLabel.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 12, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: rowLabel.intrinsicContentSize.width, height: 22)
+        moreButton.anchor(top: nil, left: rowLabel.rightAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 4, paddingBottom: 0, paddingRight: 0, width: 10, height: 10)
+        moreButton.centerYAnchor.constraint(equalTo: rowLabel.centerYAnchor).isActive = true
         postCollection.anchor(top: rowLabel.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 12, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 330)
         bottomDividerView.anchor(top: bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0.6)
         postCollection.register(HomeRowCells.self, forCellWithReuseIdentifier: cellId)

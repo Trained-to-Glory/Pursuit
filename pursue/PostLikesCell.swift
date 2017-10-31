@@ -39,7 +39,7 @@ class PostLikesCell : UICollectionViewCell {
     func setupView(){
         addSubview(userPhoto)
         
-        let userInfoStack = UIStackView(arrangedSubviews: [fullnameLabel, usernameLabel])
+        let userInfoStack = UIStackView(arrangedSubviews: [usernameLabel, fullnameLabel])
         userInfoStack.axis = .vertical
         userInfoStack.spacing = 10
         userInfoStack.translatesAutoresizingMaskIntoConstraints = false
